@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#header{
+    width:500px;
+    background-color: yellow;
+    border:1px solid #ffffff;
+    text-align: center;
+}
+ #wrap{
+    width: 500px;
+    background-color: #66dbf6;
+    border: 2px solid #ff0000;
+    text-align: center;
+    overflow:hidden;
+} 
+#content{
+    width: 350px;
+    border: 1px solid #ff0000;
+    float: left;
+}
+#side_banner{
+    width:146px;
+    border: 1px solid #ff0000;
+    float: right;
+}
+
+.menu1{
+    color:purple;
+    font-size: large;
+}
+.menu3, .menu5, menu1{
+    color:red;
+    font-size: large;
+} 
+ul li.menu{
+    color:red;
+    font-weight: bold;
+    font-size: 30px;
+}
+#footer{
+    clear:both;
+    background-color: yellow;
+    width:500px;
+    border:3px solid #ffffff;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>HEADER</h1>
+    </div>
+    
+    <div id="wrap">
+        <div id="content">
+            <h1>CONTENT</h1>
+            <ul>
+                <li class="menu">menu1</li>
+                <li class="menu">menu2</li>
+                <li class="menu">menu3</li>
+                <li class="menu">menu4</li>
+                <li class="menu">menu5</li>
+            </ul>
+            
+            <ol>
+                <li class="menu1">menu1</li>
+                <li class="menu2">menu2</li>
+                <li class="menu3">menu3</li>
+                <li class="menu4">menu4</li>
+                <li class="menu5">menu5</li>
+            </ol>
+
+        </div>
+        <div id="side_banner">
+            <h1>BANNER</h1>
+            <a href="http://google.co.kr">address요</a>
+        </div>
+    </div>
+    
+    <div id="footer">
+        <h1>FOOTER</h1>
+    </div>
+</body>
+
+</html>

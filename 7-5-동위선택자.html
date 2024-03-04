@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+h3~div{ /*h3와 동등한 것(형제 관계)들을 특정하여 스타일 적용*/
+    font-size: 15px;
+    color: orange;
+    background-color: red;
+}
+
+h3+div{ /*(이웃한 형제만)h3왕 동등한 것들 중 바로 옆에 있는 것*/
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}
+
+    </style>
+</head>
+<body>
+    <h3 id="title">동위(형제) 선택자(+, ~)</h3>
+    <div>div_01</div><hr>
+    <div>div_02</div><hr>
+    <div>div_03</div><hr>
+    <div>div_04</div><hr>
+    <div>div_05</div><hr>
+
+</body>
+</html>
