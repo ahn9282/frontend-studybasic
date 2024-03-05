@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .square {
+            width: 800px;
+            border: 1px solid #cccccc;
+            margin: 0 auto;
+            height: 600px;
+        }
+
+        header {
+            background-color: blue;
+            text-align: center;
+            margin: 0;
+            font-weight: bold;
+            overflow: hidden;
+            height: 100px;
+            width: 800px;
+        }
+header>h1{
+    line-height: 50px;
+}
+        main {
+            background-color: green;
+            margin: 0;
+            float: left;
+            height: 400px;
+            width: 600px;
+        }
+
+        aside {
+            background-color: yellow;
+            margin: 0;
+            height: 400px;
+            width: 200px;
+
+            float: right;
+        }
+
+        footer {
+            clear: both;
+            background-color: red;
+            margin: 0;
+            height: 100px;
+            width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square">
+        <header>
+            <h1>고정 그리드 레이아웃</h1>
+        </header>
+        <main>
+            <p>본문</p>
+        </main>
+        <aside>
+            <p>사이드바</p>
+        </aside>
+        <footer>
+            <p>푸터</p>
+        </footer>
+    </div>
+</body>
+
+</html>

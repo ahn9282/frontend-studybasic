@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #content a::after{
+            content:"(해당링크)"attr(href);
+        }
+        #wrap{
+            width: 684px;
+            border:2px solid green;
+            overflow:hidden;
+            margin: 0 auto;
+        }
+        #header{
+            border-bottom: 2px solid green;
+            text-align: center;
+        }
+        #footer li{
+            float:left;
+            list-style: none;
+        }
+        #footer {
+            border:2px solid green;
+        }
+        #content ul li{
+            list-style: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>헤더</h1>
+        </div>
+        <div id="content">
+            <ul>
+                <li><a href="http://www.sba.seoul.kr" target="_blank">서울산업진흥원</a></li>
+                <li><a href="http://wiz.center" target="_blank">위즈센터</a></li>
+                <li><a href="http://www.yahoo.com" target="_blank">야후</a></li>
+                <li><a href="http://www.google.com" target="_blank">구글</a></li>
+            </ul>
+        </div>
+        <div id="footer">
+            <li><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAyMDRfMTc2%2FMDAxNzA3MDU3NTk1NDk5.b_o2iGEO-Csf3zJYifGZ0Nb0n8_B3-21qp5PeXZUXggg.a8x732u1mQsf59Qantb4t28dUgg6QaRqa0eenyel-PYg.JPEG.jyj4288%2Fjump-rope-5746626_1280.jpg&type=a340"></li>
+            <li><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5501%2F2018%2F06%2F29%2F60152_17228_3235_20180629093317412.png&type=a340"></li>
+        </div>
+    </div>
+</body>
+</html>
