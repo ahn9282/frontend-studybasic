@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Cafe</title>
 	<style>
+		@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+		@import url(https://fonts.googleapis.com/css?family=Oleo+Script);
+
 		* {
 			margin: 0;
 			padding: 0;
@@ -45,7 +48,7 @@
 			color: #fff;
 		}
 
-		li a:hover{
+		li a:hover {
 			color: yellow;
 			font-weight: bold;
 		}
@@ -82,7 +85,7 @@
 			left: 600px;
 			border-radius: 200px 200px 200px 200px;
 			margin: 20px;
-			top:50px;
+			top: 50px;
 		}
 
 		#comment1 {
@@ -106,7 +109,6 @@
 
 		#comment2>p {
 			margin: 20px;
-			;
 		}
 
 		#footer {
@@ -115,6 +117,101 @@
 			line-height: 80px;
 			background-color: black;
 			color: #cccccc;
+		}
+
+		@media screen and (min-width:0) and (max-width:1020px) {
+
+			#container {
+				width: 500px;
+				border: 1px solid #cccccc;
+				margin: 10px auto;
+				height: auto;
+			}
+
+			ul {
+				background-color: black;
+				overflow: hidden;
+				height: 60px;
+				list-style: none;
+				margin: 0;
+				padding: 10px;
+				text-align: center;
+			}
+
+			ul li {
+				color: white;
+				text-align: center;
+				display: inline;
+				margin: 20px auto;
+				display: inline-block;
+				color: #fff;
+				font-family: "맑은 고딕", 돋움;
+				font-size: 0.9em;
+				margin: 5px 15px;
+			}
+
+			li a:link,
+			a:visited {
+				color: #fff;
+			}
+
+			li a:hover {
+				color: yellow;
+				font-weight: bold;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			#hp {
+				width: 100%;
+			}
+
+			#content1,
+			#content2,
+			#content3 {
+				position: relative;
+				border-bottom: 1px solid #cccccc;
+				overflow: hidden;
+				padding: 40px;
+				height: 400px;
+			}
+
+			#p1,
+			#p2,
+			#p3 {
+
+				display: none;
+			}
+
+			#comment1,
+			#comment2 {
+				position: absolute;
+				top: 35%;
+				left: 20%;
+				width: 70%;
+				text-align: center;
+			}
+
+			#comment3 {
+				position: absolute;
+				top: 35%;
+				left: 10%;
+				text-align: center;
+			}
+
+
+
+
+
+			#footer {
+				text-align: center;
+				height: 80px;
+				line-height: 80px;
+				background-color: black;
+				color: #cccccc;
+			}
 		}
 	</style>
 </head>
@@ -127,13 +224,13 @@
 				<li><a href="#content2">오시는 길</a></li>
 				<li><a href="#content3">이 달의 추천</a></li>
 			</ul>
-			<img id="hp" src="/14/images/header.jpg" alt="">
+			<img id="hp" src="/images/header.jpg" alt="">
 		</div>
 		<div id="content">
 
 			<div id="content1">
 				<h2>카페 소개</h2>
-				<img id="p1" src="/14/images/coffee.jpg" alt="">
+				<img id="p1" src="/images/coffee.jpg" alt="">
 				<div id="comment1">
 					<p>
 					<h3>영업 시간 : 오전 9시 ~ 밤 10시</h3>
@@ -150,7 +247,7 @@
 
 			<div id="content2">
 				<h2>오시는 길</h2>
-				<img id="p2" src="/14/images/map.jpg" alt="">
+				<img id="p2" src="/images/map.jpg" alt="">
 				<div id="comment1">
 					<p>
 					<h3>서귀포시 안덕면 사계리 oooo-ooo</h3>
@@ -164,7 +261,7 @@
 
 			<div id="content3">
 				<h2>이 달의 추천</h2>
-				<img id="p3" src="/14/images/ice.jpg" alt="">
+				<img id="p3" src="/images/ice.jpg" alt="">
 				<div id="comment2">
 					<p>
 					<h3>핸드드립 아이스커피</h3>

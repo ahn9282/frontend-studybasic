@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 5px;
+      padding: 0;
+      border:0;
+      color:white;
+    }
+    #parent{
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+  body{
+    width:90%;
+  }
+  #mid, header, footer{
+    width:100%;
+    border:1px solid black;
+  }
+  .mid{
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+ 
+  .mid div{
+    margin: 5px;
+    height: 60%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  #nav, #side{
+    width:20%;
+  }
+  #section{
+    width:60%;
+    
+  }
+  header,footer{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    background-color: blue;
+  }
+  
+  #nav, #side{
+background-color: pink;
+  }
+  #section{
+background-color: greenyellow;
+  }
+  @media screen and (min-width:0px) and (max-width:1000px){
+    
+    .mid{
+      width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    .mid div{
+      
+    margin: 5px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  #nav, #side{
+    width:100%;
+  }
+  #section{
+    width:100%;
+    
+  }
+  *{
+    height:20vh;
+  }
+  } 
+  </style>
+</head>
+<body>
+  <div id="parent">
+<header>HEADER</header>
+<div class="mid">
+  
+  <div id="nav">SIDENAV</div>
+  <div id="section">MAIN CONTENT</div>
+  <div id="side">SIDEBAR</div>
+</div>
+<footer>FOOTER</footer>
+</div>
+</body>
+</html>
