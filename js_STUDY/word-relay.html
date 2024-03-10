@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div><span id="order">1</span>번쨰 참가자 </span></div>
+    <div>제시어 : <span id="word"></span></div>
+    <input type="text">
+    <button>입력</button>
+    <script>
+        const number = parseInt(prompt('몇명이 참가?'), 10);
+        const $button = document.querySelector('button');
+        const $input = document.querySelector('input');
+        let word;
+        let newWord;
+        const $word = document.querySelector('#word');
+        const $order = document.querySelector("#order");
+
+
+        const onClickButton = () => {
+            if (!word || word[word.length - 1] === newWord[0]) {
+                word = newWord;
+                $word.textContent = word;
+                $input.value = '';
+                const order = Number($order.textContent);
+                if (order + 1 > number) {
+                    $order.textContent = 1;
+                } else {
+                    $order.textContent = order + 1;
+                }
+                $input.value = '';
+                $input.focus();
+            } else {
+
+
+                $input.value = '';
+                $input.focus();
+                alert('올바르지 않은 단어입니다.');
+
+            }
+        };
+        const onInput = (event) => {
+            newWord = event.target.value;
+        };
+
+        $button.addEventListener('click', onClickButton);
+        $input.addEventListener('input', onInput);
+    </script>
+</body>
+
+</html>
