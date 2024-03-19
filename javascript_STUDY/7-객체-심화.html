@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-객체</title>
+  <script src="js/calculator.js" type="text/JavaScript"> </script>
+  <script>
+
+   let bicycle={
+    width:"200cm",
+    height:"100cm",
+    run: function(){
+      return "go!!"
+    }
+
+   }
+   document.write(bicycle.width + "<br>");
+   document.write(bicycle.height + "<br>");
+   document.write(bicycle.run() + "<br>");
+
+   function createCar(name, color,speed){
+      let carObj = {
+        name:name,
+        color:color,
+        speed:speed,
+        run:function(){
+          return this.speed + "Km/h";
+        }
+      }
+      return carObj;
+   }
+
+   let sorento = createCar("sorento", "red", 130);
+   document.write("소렌토의 속도 : " +sorento.run() + "<br>");
+
+   document.write("<br>");
+
+   let calculator = (function(){
+    function add(x,y){
+      return x + y;
+    }
+    function sub(x,y){
+      return x - y;
+    }
+    function mul(x,y){
+      return x * y;
+    }
+    function div(x,y){
+      return x / y;
+    }
+    return {
+      add:add, // add:function add(x,y){return x+y;}  랑 같다.  위의 함수이름을 가져와서 함수자체를 값으로 속성에 넣는다.
+      sub:sub,
+      mul:mul,
+      div:div
+    };
+   })()
+
+   document.write(calculator + "<br>");
+   document.write(typeof calculator+ "<br>");
+   document.write(calculator.add(2,4) + "<br>");
+   document.write(calculator.sub(2,1) + "<br>");
+   document.write(calculator.mul(4,2) + "<br>");
+   document.write(calculator.div(8,2) + "<br>");
+
+   document.write("<hr>");
+
+   (function method(){
+    document.write("asdasd"+ "<br>");
+    
+   })();
+
+
+   (function (x){
+    document.write("숫자"+x +  "<br>");
+    
+   })(3);
+
+
+   document.write(area.circleArea(10).toFixed(2) + "<br>");
+   document.write(area.triangleArea(1,2) + "<br>");
+   document.write(area.rectangleArea(1,2) + "<br>");
+ 
+
+
+
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html> 

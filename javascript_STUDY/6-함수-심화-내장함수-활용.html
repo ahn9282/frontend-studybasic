@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5-함수</title>
+
+
+</head>
+
+<body>
+  <script>
+    alert('내장함수');
+    console.log('내장함수 : 기본적으로 제공하는 함수');
+    let varEval = "console.log('내장함수 : 기본적으로 제공하는 함수')";
+    eval(varEval);
+    varEval = "document.write('<p>eval함수</p>')";
+    eval(varEval);
+
+
+    let timeoutId = setTimeout(function(){alert('3초후 실행되요/');},3000);
+
+    clearTimeout(timeoutId);
+
+    function intervalTwoSecond(){
+      document.write("안녕하세요" +"<br>");
+
+    }
+
+    let intervalId= setInterval(intervalTwoSecond,1000);
+    
+    function endFunction(){
+      clearInterval(printIntervalId);
+      clearInterval(intervalId);
+      console.log("종료");
+    }
+    let printTimeOutId= setTimeout(endFunction,7000);
+      
+    let printIntervalId = setInterval(function(){console.log("*");},2000);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-객체</title>
+
+  <script>
+
+    let grade = {
+      kor: Number(prompt('국어 점수 입력')),
+      eng: Number(prompt('영어 점수 입력')),
+      math: Number(prompt('수학 점수 입력')),
+      total: function () {
+        return this.kor + this.eng + this.math;
+      },
+      avg: function () {
+        return (this.kor + this.eng + this.math) / 3.0;
+      },
+      avg1: function () {
+        return this.total() / 3.0;
+      },
+      grade: function () {
+        let val;
+        if (this.avg1() >= 90) {
+          val = "수";
+        } else if (this.avg1() >= 80) {
+          val = "우";
+        } else if (this.avg1() >= 70) {
+          val = "미";
+        } else if (this.avg1() >= 60) {
+          val = "양";
+        } else {
+          val = "가";
+        }
+        return "등급은 " + val + "입니다."
+      }
+    }
+    document.write("국어 점수 : " + grade.kor + "<br>");
+    document.write("영어 점수 : " + grade.eng + "<br>");
+    document.write("수학 점수 : " + grade.math + "<br>");
+    document.write("총 점수 : " + grade.total() + "<br>");
+    document.write("평균 점수 : " + grade.avg().toFixed(2) + "<br>");
+    document.write("평균 점수 : " + grade.avg1().toFixed(2) + "<br>");
+    document.write("평균 점수 : " + grade.grade() + "<br>");
+
+    document.write("<hr>");
+
+    let objNation={
+      nation:"Korea",
+      capital:"Seoul",
+      langguage:"Hangeul",
+      population:50000000
+
+    }
+    document.write(objNation.nation + "<br>");
+    document.write(objNation["nation"] + "<br>");
+    
+    document.write(objNation.population + "<br>");
+    document.write(objNation["population"] + "<br>");
+
+    let print="";
+
+    objNation.city = "paju";
+    for(let key in objNation){
+      print=print + key + ":" + objNation[key] + "<br>";
+    }
+    document.write(print + "<br>");
+
+    delete objNation.city;
+
+    for(let key in objNation){
+      print=print + key + ":" + objNation[key] + "<br>";
+    }
+    document.write(print + "<br>");
+    document.write(("city" in objNation) + "<hr>");
+
+    with(objNation){
+      document.write(nation + "<br>");
+      document.write(langguage + "<br>")
+    }
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html>

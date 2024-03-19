@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-객체</title>
+
+  <script>
+    let funName = function(){};
+    document.write(typeof funName + "<br>");
+    
+    let objName = {};
+    document.write(typeof objName + "<br>");
+    
+    let objData = {
+      num : 123,
+      str : "abc",
+      boo : true,
+      obj : {},
+      fun : function(){},
+      arr : [1,2,3],
+      ude : undefined
+    }
+    
+    document.write(typeof objData + "<br>");
+    document.write( objData.num + "<br>");
+    document.write( objData.str + "<br>");
+    document.write( objData.boo + "<br>");
+    document.write( objData.fun + "<br>");
+    document.write( objData.obj + "<br>");
+    document.write( objData.arr + "<br>");
+    document.write( objData.ude + "<br>");
+    
+    
+    let objCar={
+      width: "3m",
+      height : "2m",
+      cc: "2000cc",
+      energy:100,
+      
+      speed : function(power){
+        return this.energy*power; //객체의 내부속성을 활용할 경우에는 this사용
+      }
+    }
+    document.write(  "<hr>");
+
+    document.write( objCar.width + "<br>");
+    document.write( objCar.height + "<br>");
+    document.write( objCar.cc + "<br>");
+    document.write( objCar.energy + "<br>");
+    document.write( objCar.speed(102) + "<br>");
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html>
