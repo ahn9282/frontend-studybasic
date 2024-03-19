@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-조건문응용</title>
+    <script>
+
+
+        let num1 = Number("12334");
+        let num2 = Number("431");
+
+        let result = (num1 > num2) ? "num1가 크다" : "num2가 크다";
+
+
+        document.write(result);
+
+
+
+
+        let number1 = 6;
+        let number2 = 84;
+        let number3 = 12;
+        document.write("<br>");
+        if (number1 > number2) {
+            if (number1 > number3) {
+                document.write("number1이 제일 큼");
+            } else {
+                document.write("number3이 제일 큼");
+            }
+        } else {
+            if (number2 > number3) {
+                document.write("number2이 제일 큼");
+            } else {
+                document.write("number3이 제일 큼");
+            }
+        }
+        document.write("<br>");
+        let str = (number1 > number2) ? (number1 > number3)
+            ? "number1이 제일 큼" : "number3이 제일 큼"
+            : (number2 > number3) ? "number2이 제일 큼" : "number3이 제일 큼";
+        document.write(str);
+
+        document.write("<br>");
+        if ((number1 > number2) && (number1 > number3)) {
+
+            document.write("number1이 제일 큼");
+
+        } else if ((number2 > number3) && (number1 < number2)) {
+
+            document.write("number2이 제일 큼");
+        } else {
+            document.write("number3이 제일 큼");
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+
+    </script>
+
+</body>
+
+</html>
