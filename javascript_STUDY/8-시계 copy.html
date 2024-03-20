@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>로또 번호 생성기</title>
+<style>
+  .ball {
+    display: inline-block;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 10px;
+  }
+</style>
+</head>
+<body>
+<div id="lotto-balls"></div>
+
+<script>
+function generateLottoNumbers() {
+  const lottoNumbers = new Set();
+  while (lottoNumbers.size < 6) {
+    lottoNumbers.add(Math.floor(Math.random() * 45) + 1);
+  }
+  return [...lottoNumbers];
+}
+
+function displayBalls(numbers) {
+  const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+  const ballsContainer = document.getElementById('lotto-balls');
+  ballsContainer.innerHTML = '';
+  numbers.forEach((number, index) => {
+    const ball = document.createElement('div');
+    ball.textContent = number;
+    ball.className = 'ball';
+    ball.style.backgroundColor = colors[index % colors.length];
+    ballsContainer.appendChild(ball);
+  });
+}
+
+const lottoNumbers = generateLottoNumbers();
+displayBalls(lottoNumbers);
+</script>
+</body>
+</html>

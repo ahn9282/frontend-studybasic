@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8-내장객체</title>
+  <script>
+    let strEn = "ABCDEAE";
+    let strEn1 = "ABCDEAE";
+    let strKO = new String('가나달라');
+    String.prototype.temp = "123";
+    String.prototype.길이 = function(){
+      return this.length;
+    }
+    document.write(strEn.temp + "<br>");
+    document.write(strKO + strKO.temp+ "<br>");
+    document.write(strKO.length+ "<br>");
+    
+    document.write(strKO.길이()+ "<br>");
+    
+    document.write("charAt() : " + strEn.charAt(3) + "<br>");
+    document.write("indexOf() : " + strEn.indexOf("C") + "<br>");
+    document.write("lastIndexOf() : " + strEn.lastIndexOf("E") + "<br>");
+    document.write("strconcat() : " + strEn.concat("abcde") + "<br>");
+    document.write("replace() : " + strEn.replace("B","Z") + "<br>");
+    document.write(strEn+ "<br>");
+    
+    document.write("split() : " + strEn.split("C") + "<br>");
+    document.write("slice() : " + strEn.slice(2,4) + "<br>");
+
+    let lower = strEn.toLowerCase();
+    document.write("toLowerCase() : " + lower + "<br>" );
+
+    let upper = strEn.toUpperCase();
+    document.write("toUpperCase() : " + upper + "<br>" );
+
+    if(strEn===strEn1){
+      document.write("같아용");
+    }else{
+      document.write("달라여");
+
+    }
+    let num = 123;
+    if(strEn.temp==num){
+      document.write("같아용");
+    }else{
+      document.write("달라여");
+
+    }
+
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html> 

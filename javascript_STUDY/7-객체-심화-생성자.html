@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-객체</title>
+  <script>
+    function Airplane(name, color, speed){
+    this.name=name;
+    this.color=color;
+    this.speed = speed;
+    this.fly = function(){
+      return this.speed + "  fly!";
+    }
+    }
+
+    let boeing737 = new Airplane("boing747", " white.blue", "600km/h");
+    document.write(boeing737.name + "<br>")
+    document.write(boeing737.color + "<br>")
+    document.write(boeing737.speed + "<br>")
+    document.write(boeing737.fly() + "<br>")
+
+
+    function abc(){
+      console.log("aaaaaa");
+    }
+    abc();
+    let add = new abc();
+    console.log(typeof abc);
+    console.log(typeof (new abc())); // function -> {}(object)
+    console.log(typeof  add);
+
+    document.write("<hr>");
+ 
+    function grade(x,y,z){
+      this.kor = x;
+      this.eng = y;
+      this.math = z;
+      this.getTotal = function(){
+        return this.kor + this.eng + this.math;
+      };
+      this.getAvg=function(){
+        return (this.getTotal()/3.0).toFixed(2);
+      }
+      this.getGrade=function(){
+        if(this.getAvg()>=90){
+          return "수입니다."
+
+        }else{
+          return "우입니다."
+        }
+      }
+    }
+
+    let 철수 = new grade(70,80,90);
+    document.write(철수.getAvg()+"<br>")
+    document.write(철수.getGrade()+"<br>");
+
+    function User(name){
+      this.name = name;
+      this.sayHi=function(){
+        document.write( "제 이름은 "+ this.name+"입니다." + "<br>");
+      }
+    }
+
+    let bora = new User("이보라");
+    bora.sayHi();
+
+    let songhee = new User("송희");
+    songhee.sayHi();
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html> 

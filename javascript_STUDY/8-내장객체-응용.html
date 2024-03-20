@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8-내장객체</title>
+  <script>
+  function lottoNumber(){
+      const set = new Set();
+      while(set.size<6){
+        let lottonum = Math.floor(Math.random()*45+1);
+        set.add(lottonum);
+      }
+      let printlotto = "";
+      for (const num of set) {
+        printlotto = printlotto + " " + num;
+}
+return printlotto;
+    }
+    let lotto = lottoNumber();
+    document.write(lotto);
+   
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html> 

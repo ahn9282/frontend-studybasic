@@ -34,7 +34,7 @@
         } else {
           val = "가";
         }
-        return "등급은 " + val + "입니다."
+        return "등급은 " + val + "입니다.";
       }
     }
     document.write("국어 점수 : " + grade.kor + "<br>");
@@ -47,38 +47,37 @@
 
     document.write("<hr>");
 
-    let objNation={
-      nation:"Korea",
-      capital:"Seoul",
-      langguage:"Hangeul",
-      population:50000000
+    let objNation = {
+      nation: "Korea",
+      capital: "Seoul",
+      langguage: "Hangeul",
+      population: 50000000
 
     }
     document.write(objNation.nation + "<br>");
     document.write(objNation["nation"] + "<br>");
-    
+
     document.write(objNation.population + "<br>");
     document.write(objNation["population"] + "<br>");
 
-    let print="";
-
+    let print = " ";
     objNation.city = "paju";
-    for(let key in objNation){
-      print=print + key + ":" + objNation[key] + "<br>";
+    for (let key in objNation) {
+      print = print + key + ":" + objNation[key] + "<br>";
     }
     document.write(print + "<br>");
 
     delete objNation.city;
 
-    for(let key in objNation){
-      print=print + key + ":" + objNation[key] + "<br>";
+    for (let key in objNation) {
+      print = print + key + ":" + objNation[key] + "<br>";
     }
     document.write(print + "<br>");
     document.write(("city" in objNation) + "<hr>");
 
-    with(objNation){
+    with (objNation) {
       document.write(nation + "<br>");
-      document.write(langguage + "<br>")
+      document.write(langguage + "<br>");
     }
   </script>
 

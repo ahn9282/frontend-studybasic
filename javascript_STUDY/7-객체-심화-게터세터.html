@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-객체</title>
+  <script>
+
+    function BMICalculator(height, weight) {
+
+
+
+      this.weight = weight;
+      this.height = height;
+      this.bmi = function () {
+        return (this.weight * Math.pow(this.height, 2)).toFixed(2);
+
+      }
+    }
+    let myBMI = new BMICalculator(1.9, 90);
+    document.write(myBMI.bmi() + "<br>");
+
+    function BMICalculator2() {
+      let height = 0;
+      let weight = 0;
+      this.bmi = function () {
+        return (this.weight * Math.pow(this.height, 2)).toFixed(2);
+      }
+
+      this.getHeight = function () {
+        return this.height;
+      }
+
+      this.setHeight = function (height) {
+        if (isNaN(height)) {
+          document.write("숫자가 아닙니다!!");
+        } else {
+          this.height = height;
+        }
+      }
+      this.getWeight = function () {
+        return this.weight;
+      }
+      this.setWeight = function (weight) {
+        if (isNaN(weight)) {
+          document.write("숫자가 아닙니다!!");
+        } else {
+          this.weight = weight;
+        }
+      }
+    }
+
+    myBMI2 = new BMICalculator2();
+    myBMI2.setHeight(1.9);
+    myBMI2.setWeight(90);
+    document.write(myBMI2.getHeight() + "<br>");
+    document.write(myBMI2.getWeight() + "<br>");
+    document.write(myBMI2.bmi() + "<br>");
+
+
+    function grade2() {
+      this.kor = 0;
+      this.eng = 0;
+      this.math = 0;
+      this.setEng = function (eng) {
+        if (eng < 0 || eng > 100) { 
+          document.write(eng + "는 잘못된 입력이요~"+ "<br>");
+        } else { 
+        this.eng = eng;
+        document.write("영어 점수는 " + this.eng +"입니다." + "<br>");
+      }
+      }
+    
+    this.setMath = function (math) {
+      if (math < 0 || math > 100) { 
+          document.write(math + "는 잘못된 입력이요~" + "<br>");
+        } else { 
+        this.math = math;
+        document.write("수학 점수는 " + this.math +"입니다."+ "<br>");
+      }
+    }
+    this.setKor = function (kor) {
+      if (kor < 0 || kor > 100) { 
+          document.write(kor + "는 잘못된 입력이요~"+ "<br>");
+        } else { 
+        this.kor = kor;
+        document.write("국어 점수는 " + this.kor +"입니다." + "<br>");
+      }
+    }
+    this.getTotal = function () {
+      return this.kor + this.eng + this.math;
+    };
+    this.getAvg = function () {
+      return (this.getTotal() / 3.0).toFixed(2);
+    }
+    this.getGrade = function () {
+      if (this.getAvg() >= 90) {
+        return "수입니다."
+
+      } else {
+        return "우입니다."
+      }
+    }
+    }
+    let 철수 = new grade2();
+    철수.setKor(12);
+    철수.setEng(-23);
+    철수.setMath(1234);
+    document.write(철수.getAvg()+"<br>")
+    document.write(철수.getGrade()+"<br>");
+
+    function Circle(){
+      this.radius = 0;
+      this.setRadius = function(radius){
+        if(isNaN(radius)){
+          document.write("숫자가 아닙니다.");
+        }else{
+          this.radius =radius;
+        }
+      }
+      this.getArea = function(){
+        document.write(Math.PI * Math.pow(this.radius,2));
+      }
+    }
+    function Rectangle(){
+      this.width = 0;
+      this.height = 0;
+      this.setWidth = function(width){
+        if(isNaN(width)){
+          document.write("숫자가 아닙니다.");
+        }else{
+          this.width =width;
+        }
+      }
+      this.setHeight = function(height){
+        if(isNaN(height)){
+          document.write("숫자가 아닙니다.");
+        }else{
+          this.height =height;
+        }
+      }
+      this.getArea = function(){
+        document.write(this.height* this.width);
+      }
+    }
+    var circle = new Circle();
+circle.setRadius(10);
+
+circle.getArea(); 
+
+var rec = new Rectangle();
+rec.setWidth(10);
+
+rec.setHeight(10);
+
+rec.getArea(); 
+
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html>

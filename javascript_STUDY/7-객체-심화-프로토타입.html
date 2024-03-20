@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-객체</title>
+  <script>
+    function Scoring(player, scoreFirst, scoreSecond, scoreThird){
+      this.player=player;
+      this.scoreFirst=scoreFirst;
+      this.scoreSecond=scoreSecond;
+      this.scoreThird=scoreThird;
+      this.getTotal = function(){
+        return this.scoreFirst+this.scoreSecond+this.scoreThird;
+      }
+      this.getAvg=function(){
+        return (this.getTotal()/3).toFixed(3);
+      }
+
+    }
+    function Scoring2(player, scoreFirst, scoreSecond, scoreThird){
+      this.player=player;
+      this.scoreFirst=scoreFirst;
+      this.scoreSecond=scoreSecond;
+      this.scoreThird=scoreThird;
+      // this.getTotal = function(){
+      //   return this.scoreFirst+this.scoreSecond+this.scoreThird;
+      // }
+      // this.getAvg=function(){
+      //   return (this.getTotal()/3).toFixed(3);
+      // }
+
+    }
+
+    Scoring2.prototype.getTotal = function(){
+      return this.scoreFirst+this.scoreSecond+this.scoreThird;
+    }
+    Scoring2.prototype.getAvg = function(){
+      return (this.getTotal()/3).toFixed(3);
+    }
+    let kiki =  new Scoring("kiki", 90,90,92);
+    let kaka =  new Scoring2("kaka", 97,77,90);
+    
+    document.write(kiki.player + "의 총점 : " + kiki.getTotal()+"<br>");
+    document.write(kiki.player + "의 평균  : " + kiki.getAvg()+"<br>");
+    
+    kaka.getPrint = function(){
+      return this.player + this.scoreFirst;
+    }
+    kaka.getAvg = function(){
+      return "평균은 영어로 average~";
+    }
+
+    document.write(kaka.player + "의 총점 : " + kaka.getTotal()+"<br>");
+    document.write(kaka.player + "의 평균  : " + kaka.getAvg()+"<br>");
+    document.write(kaka.player + "의 프린트  : " + kaka.getPrint()+"<br>");
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html> 
