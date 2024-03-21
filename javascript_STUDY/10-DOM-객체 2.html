@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10-DOM-객체.</title>
+  <script>
+    window.onload = function () {
+
+    let title = document.getElementById('title');
+    title.innerHTML = "<h1 >Ah~~</h1>";
+
+    let image=document.getElementById('puppy');
+    image.setAttribute("src","https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20120707_142%2Fq2453453_1341622373748bkjoS_JPEG%2F%25B0%25AD%25BE%25C6%25C1%25F6_%25282%2529.JPG&type=a340");
+    image.setAttribute("width",600);
+
+    image.innerHTML=image;
+
+    let h2tag = document.getElementsByTagName("h2");//tag가 2개 이상일 경우 collection의 배열로 들어와 for문을 돌려서 모든 태그들에 적용이 되어야만한다.
+    console.log(h2tag);
+    for(let tag of h2tag){
+      tag.innerHTML="<h1>h2h2h2h</h1>";
+    }
+    let listclass = document.getElementsByClassName("list");
+    console.log(listclass);
+    for(let list of listclass){
+      list.setAttribute("style", 'list-style:none; color:red;');
+      list.innerHTML="<h3>fruit</h3>";
+    }
+
+    
+    }
+  </script>
+</head>
+
+
+<body>
+<p id="title">Ah~~</p>
+<p id="title1">Ah~~</p>
+<p>우우우우우</p>
+<img id="puppy">
+<h1>h1h1</h1>
+<h2>pppp1</h2>
+<h2>pppp2</h2>
+<h2>pppp3</h2>
+<ul>
+  <li class="list">유우</li>
+  <li class="list">바나나우류</li>
+  <li class="list">오렌지 우유</li>
+</ul>
+</body>
+
+</html>

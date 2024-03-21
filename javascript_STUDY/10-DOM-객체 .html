@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10-DOM-객체.</title>
+  <script>
+    window.onload = function () {
+
+      let element = document.createElement("p");
+      let text = document.createTextNode("자바 스크립트");
+
+      element.appendChild(text);
+      document.body.appendChild(element);
+      
+      let image = document.createElement("img");
+      image.setAttribute("src","https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAxMjJfMjYx%2FMDAxNjc0MzUwMjk4MzIw.n3lt1IbU_fYVm1vPN6sHilS4ZiQ8Fe0kM-rFLLre7gwg.tUoULJLJGLB7czLRq_VRG7ECv3l7CnkupqTtAeaaDbEg.GIF.ikik45%2F%25C1%25A6%25B8%25F1_%25BE%25F8%25B4%25C2_%25BE%25C6%25C6%25AE%25BF%25F6%25C5%25A9.gif&type=a340");
+      image.setAttribute("width",300);
+      
+      document.body.appendChild(image);
+
+      let str = " <p>자바스크립트</p>";
+      str += "<img src='https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAxMjJfMjYx%2FMDAxNjc0MzUwMjk4MzIw.n3lt1IbU_fYVm1vPN6sHilS4ZiQ8Fe0kM-rFLLre7gwg.tUoULJLJGLB7czLRq_VRG7ECv3l7CnkupqTtAeaaDbEg.GIF.ikik45%2F%25C1%25A6%25B8%25F1_%25BE%25F8%25B4%25C2_%25BE%25C6%25C6%25AE%25BF%25F6%25C5%25A9.gif&type=a340'>"
+      
+    }
+  </script>
+</head>
+
+
+<body>
+<p id="title">Ah~~</p>
+
+</body>
+
+</html>

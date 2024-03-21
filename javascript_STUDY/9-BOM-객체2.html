@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9-BOM-객체.</title>
+  <script>
+    window.onload = function () {
+      //onload() 호출된 웹문서가 모두 완료된 후 자동 실행
+      location.href="https://www.naver.com/";//주소를 설정
+     // location.replace("https://yahoo.com/");//현재 페이지를 새로운 페이지로 덮어 씌운다. 
+     //히스토리에 기록되지 않아 이전 페이지로 이동불가
+    }
+
+    function openWin(url, width, height) {
+      console.log(screen.width);
+      console.log(screen.height);
+      let left = screen.width/2 - width/2;
+      let top = screen.height/2 - height/2;
+      var opt = "width = " + width + ", height = " + height + ", left = " + left + ", top = " + top;
+      open(url,"newWin",opt);
+    }
+    openWin("https://yahoo.com/",800,500);
+
+
+
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html>
