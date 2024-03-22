@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11-이벤트.</title>
+  <script>
+
+
+  </script>
+
+</head>
+
+<body>
+  <h1>1. + 연산</h1>
+  <input type="text" id="t1"> +<input type="text" id="t2"> = <input type="text" id="t3">
+  <button type="button" onclick="calc()">연산</button> <br>
+
+  <h1>2. 총합 구하기</h1>
+  가격 : <input type="text" id="t4" onkeyup="calc2()"> X 수량
+  <select name="quantity" id="quantity">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  총합 : <span id="result2"></span><br>
+
+  <h1> 3. 총합 구하기2 (선택된 값만)</h1>
+  <ul>
+    <li>바나나(1000원)<input type="checkbox" name="banana" id="banana" value="바나나"></li>
+    <li>사과(500원)<input type="checkbox" name="apple" id="apple" value="사과"></li>
+    <li>배(1500원)<input type="checkbox" name="polar" id="polar" value="배"></li>
+  </ul><br>
+  <button type="button" onclick="calc3()">총합 구하기</button><br>
+  선택한 총가격<span id="result3"></span>
+  <script>
+
+    function calc() {
+      let re1 = Number(document.querySelector('#t1').value) + Number(document.querySelector('#t2').value);
+
+      document.querySelector('#t3').value = re1;
+    }
+    function calc2() {
+      let re2 = Number(document.querySelector('#t4').value);
+      document.querySelector('#result2').innerHTML = re2;
+    }
+    function calc3() {
+      let html = 0;
+      let banana = document.querySelector('#banana');
+      let apple = document.querySelector('#apple');
+      let polar = document.querySelector('#polar');
+      if (banana.checked == true) {
+        html = html + 1000;
+        banana.checked=false;
+      }
+      if (apple.checked == true) {
+        html = html + 500;
+        apple.checked=false;
+      }
+      if (polar.checked == true) {
+        html = html + 1500;
+        polar.checked=false;
+      }
+      document.querySelector('#result3').innerHTML = html;
+    }
+
+  </script>
+</body>
+
+</html>

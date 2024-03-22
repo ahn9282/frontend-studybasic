@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>11-이벤트</title>
+      <style>
+         #div{
+            display: flex;
+            flex: row;
+            height:30px;
+            width: 300px;
+            align-items: center;
+            
+         }
+         #plus > p, #minus > p{
+            width:8px;
+            text-align: center;
+            padding: 0 auto;
+            margin: 0 auto;
+         }
+         #number{
+            margin-right: 10px;
+         }
+      </style>
+    
+   </head>
+   
+   <body>
+   
+     <div id="div">
+      <p>갯수</p>
+      <input type="text" id="number" value="0">
+      <button type="button" id="plus" ><p>+</p></button>
+      <button type="button" id="minus" ><p>-</p></button>
+     </div>
+     <script>
+
+      let plus= document.querySelector("#plus");
+      let minus= document.querySelector("#minus");
+      let number = document.querySelector("#number");
+      function add(){
+         number.value ++; 
+      }
+      function sub(){
+         number.value --; 
+      }
+      plus.addEventListener('click',add);
+      minus.addEventListener('click',sub);
+     </script>
+   
+   </body>
+
+</html>

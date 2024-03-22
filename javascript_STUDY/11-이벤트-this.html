@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11-이벤트.</title>
+  <style>
+        #objDiv {
+            width: 200px; height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 1.2em;
+            background-color: #f00;
+            color: #fff;
+            font-weight: bolder;
+         }
+         
+         #objPar {
+            width: 200px; height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 1.2em;
+            background-color: #0f0;
+            color: #fff;
+            font-weight: bolder;
+         }
+  </style>
+</head>
+
+
+<body>
+  <div id="objDiv">Object Division</div>
+  <p id="objPar">Object Paragraph</p>
+<script>
+function addHandler(e){
+  console.log('클릭 이벤트 ');
+  console.log(this);
+  console.log(e);
+  this.style.backgroundColor = "blue";
+}
+let objDiv= document.getElementById("objDiv");
+objDiv.addEventListener('click',addHandler);
+
+let objPar= document.getElementById("objPar");
+objPar.addEventListener('click',addHandler);
+</script>
+</body>
+
+</html>

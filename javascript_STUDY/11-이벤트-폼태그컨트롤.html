@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11-이벤트.</title>
+  <script>
+  window.onload=function(){
+    let id = document.querySelector("#uID");
+    let uPw = document.querySelector("#uPw");
+    let sbmBtn = document.querySelector("#sbmBtn");
+    let resBtn = document.querySelector("#resBtn");
+    let form = document.querySelector("#loginForm");
+
+    sbmBtn.onclick = function(){
+      if(document.getElementById("uId").value==""){
+        alert("아이디가 비엇음");
+        return false;
+      }else if(document.getElementById("uPw").value==""){
+        alert("비밀번호 입력하세요");
+        return false;
+        
+      }else{
+        alert('로그인 OK 환영합니다~! ' + document.getElementById("uId").value + "님!!!");
+        //document.getElementById("loginForm").submit();
+        return true;
+      }
+    }
+
+  }
+  </script>
+  
+  
+</head>
+<body>
+     <form id="loginForm" action="http://www.google.com">
+         USER ID : <input id="uId" type="text" name="uId"><br>
+         USER PW : <input id="uPw" type="password" name="upw"><br>
+         <input id="sbmBtn" type="button" value="SUBMIT" onclick="onclick()">
+         <input id="resBtn" type="reset" value="RESET">
+      </form>
+
+</body>
+
+</html>

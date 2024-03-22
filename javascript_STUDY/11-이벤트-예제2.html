@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11-이벤트.</title>
+  <script>
+  
+  </script>
+  <style>
+
+  </style>
+</head>
+<body>
+취미<br>
+<ul >
+    <li >야구<input type="checkbox" name="hobby" value="야구" ></li>
+    <li >농구<input type="checkbox" name="hobby" value="농구"></li>
+    <li >게임<input type="checkbox" name="hobby" value="게임"></li>
+</ul>
+<button id="button" onclick="show()">결과보기</button><br>
+결과값:<div id="result"></div>
+<div id="space"></div>
+<script>
+ 
+function show(){
+  let html = "";
+  let checkArr = document.querySelectorAll("input[name='hobby']");
+  //let checkArr = document.getElementByName("input[name='hobby']");
+  //let checkArr = document.getElementTagName("input[name='hobby']");
+  for(let check of checkArr){
+    console.log(check.checked + " : " + check.value);
+    if(check.checked==true){
+      html = html + check.value + "<br>";
+    }
+    check.checked = false;
+  }
+  document.getElementById("space").innerHTML=html;
+}
+
+</script>
+
+
+</body>
+
+</html>

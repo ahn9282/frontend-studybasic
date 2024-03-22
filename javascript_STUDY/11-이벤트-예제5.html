@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11-이벤트.</title>
+  <script>
+
+
+  </script>
+
+</head>
+
+<body>
+  <input type="text" id="inputtxt">
+  <button type="button" onclick="lists()">추가</button>
+
+  <script>
+    let arr=new Array();
+    function lists(){
+      let txt = document.querySelector('#inputtxt').value;
+      let txtarr = txt.split(" ");
+      let dlt = false;
+      for(let str of txtarr){
+        if(str==="X"){
+          dlt = true;
+        }
+      }
+      if(dlt === true){
+        for(let list of arr){
+          if(list===txtarr[0]){
+           console.log( arr.indexOf(list));
+           arr.splice(arr.indexOf(list),1)
+          }
+        }
+      }else{
+
+        arr.push(txt);
+      }
+      console.log(arr);
+      document.querySelector('#inputtxt').value="";
+    }
+  </script>
+</body>
+
+</html>
+
+
+
+
+ 

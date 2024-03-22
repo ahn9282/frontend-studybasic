@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11-이벤트.</title>
+  <script>
+
+
+  </script>
+
+</head>
+
+<body>
+  <h1>가위 바위 보</h1><br>
+  가위 바위 보 중 고르시오.<br>
+  <select name="rsp" id="rsp">
+    <option value="0">가위</option>
+    <option value="1">바위</option>
+    <option value="2">보</option>
+  </select>
+  <button type="button" onclick="result()">승패 확인</button><br>
+  <h3>결과</h3><br>
+  YOU : <span id="you"></span><br>
+  COM : <span id="comm"></span><br>
+  Winner : <span id="winner"></span><br>
+  <script>
+    function gerResult(x) {
+      if (x === 0) {
+        return "가위";
+      } else if (x === 1) {
+        return "바위";
+
+      } else if (x === 2) {
+        return "보";
+
+      }
+    }
+    function result() {
+      let my = Number(document.querySelector('#rsp').value);
+      let comp = Number(Math.floor(Math.random() * 3));
+      let mine = gerResult(my);
+      let coms = gerResult(comp);
+      document.querySelector('#you').innerHTML = mine;
+      document.querySelector('#comm').innerHTML = coms;
+      let winner = document.querySelector('#winner');
+      let winresult = "";
+      let calcres = my - comp;
+      if (calcres === 0) {
+        winresult = "비겼습니다."
+      } else if (calcres === -2 || calcres === 1) {
+        winresult = "이겼습니다."
+      } else if (calcres === -1 || calcres === 2) {
+        winresult = "졌습니다."
+      }
+      winner.innerHTML = winresult;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11-이벤트.</title>
+  <script>
+  
+    function change(){
+      let txt = document.getElementById("text");
+      let sp = document.querySelector('#result');
+      sp.innerHTML=  txt.value.length;
+    }
+  
+  </script>
+  <style>
+
+  </style>
+</head>
+<body>
+  글자수 세기<br>
+  <textarea id="text" rows="10" cols="10" onkeyup="change()"onkeydown="change()"></textarea><br>
+  입력문자수:<span id="result"></span>
+
+
+</body>
+
+</html>

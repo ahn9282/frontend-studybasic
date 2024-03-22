@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11-이벤트.</title>
+  <script>
+  
+  </script>
+  <style>
+    #cEvent{
+      width:200px;
+      height: 200px;
+      background-color: red;
+      color: antiquewhite;
+      text-align: center;
+      line-height: 200px;
+      display: flex;
+      flex: row;
+      justify-content: center;
+      align-items: center;
+    }
+    #cEventAdd, #cEventRmv{
+      margin-top: 20px;
+      width:200px;
+      height: 200px;
+      background-color: blue;
+      color: antiquewhite;
+      text-align: center;
+      line-height: 200px;
+      display: flex;
+      flex: row;
+      justify-content: center;
+      align-items: center;
+    }
+   .str{
+    color: black;
+    }
+  </style>
+</head>
+
+
+<body>
+<div id="cEvent" onclick="headClick()" >click event</div>
+<div id="cEventAdd">click Event</div>
+<div id="cEventRmv">click Remove</div>
+<script>
+   function headClick(){
+       alert('Bye~~');
+
+    
+      }
+   window.onload = function(){
+    let adder = document.getElementById('cEventAdd');
+    let remover = document.getElementById('cEventRmv');
+
+    function addHandler(){
+      console.log("Click!!");
+      if(adder.style.backgroundColor == "blue"){
+
+        adder.style.backgroundColor="green";
+      }else{
+        adder.style.backgroundColor="blue";
+
+      }
+    }
+    adder.addEventListener('click',e => addHandler());
+
+    function removeHandler(){
+      console.log("event remove!!");
+    }
+    remover.addEventListener('click',removeHandler);
+
+
+    let cEvent = document.querySelector('#cEvent');
+       let str = document.createElement("span");
+       str.textContent = '클랙했다';
+       str.color = "black";
+       str.className ="str";
+       let click = cEvent.addEventListener('click',e => cEvent.appendChild(str));
+   }
+</script>
+</body>
+
+</html>
