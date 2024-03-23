@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="utf-8">
+    <title>반응속도 체크</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #cccccc;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let turn = 'O';
+        const data = [];
+        const { body } = document;// const body = document.body; 가 되는 최신 문법
+        //destructuring이라 한다. 변수 명과 사용객체가 같을 때 치환시킨다.
+        const createElement = document.createElement;
+
+        const $table = document.body.appendChild(document.createElement('table'));
+        const $result = document.createElement("div");//document를 생략했다.
+
+
+        let rows = [];
+        for (let i = 0; i < 3; i++) {
+            data.push([]);
+        }
+        
+        for (let i = 0; i < 3; i++) {
+            const $tr = document.createElement("tr");
+            const cells = [];
+            for (let j = 0; j < 3; j++) {
+                const $td = document.createElement("td");
+                cells.push($td);
+                $tr.append($td);
+            }
+            rows.push(cells);
+            $table.append($tr);
+        }
+        
+        
+        $table.addEventListener('click', e => {
+            if (e.target.textContent) {
+                alert('이미 채워진 칸입니다.')
+                return;
+            };
+            const checkWinner = (target) => {
+                let rowIndex = e.target.parentNode.rowIndex;
+                let cellIndex = e.target.cellIndex;
+                
+                let hasWinner = false;
+    
+                if (rows[rowIndex][0].textContent === turn &&
+                    rows[rowIndex][1].textContent === turn &&
+                    rows[rowIndex][2].textContent === turn
+                ) { let hasWinner = true; }
+                if (rows[0][cellIndex].textContent === turn &&
+                    rows[1][cellIndex].textContent === turn &&
+                    rows[2][cellIndex].textContent === turn
+                ) { let hasWinner = true; }
+                if (rows[0][2].textContent === turn &&
+                    rows[1][1].textContent === turn &&
+                    rows[2][0].textContent === turn
+                ) { let hasWinner = true; }
+                if (rows[0][0].textContent === turn &&
+                    rows[1][1].textContent === turn &&
+                    rows[2][2].textContent === turn
+                ) { let hasWinner = true; }
+                return hasWinner;
+            };
+            
+            e.target.textContent = turn;
+            if (checkWinner(e.target)) {
+                $result.textContent = `${turn}님이 승리!`;
+                console.log(`${turn}님이 승리!`);
+                return;
+            }
+            turn = turn == 'O' ? "X" : "O";
+        });
+        console.log(rows);
+        document.body.append($table);
+        document.body.append($result);
+    </script>
+
+</body>
+
+</html>

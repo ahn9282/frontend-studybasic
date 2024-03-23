@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="utf-8">
+    <title>반응속도 체크</title>
+<style>
+
+#screen{
+    width:300px;
+    height: 200px;
+    text-align: center;
+    user-select: none;
+}
+    #screen.waiting{
+        background-color: aqua;
+        color: black;
+    }
+    #screen.ready{
+        background-color: red;
+        
+    }
+    #screen.now{
+        background-color: rgb(163, 237, 15);
+        color: black;
+
+    }
+</style>
+</head>
+<div id="screen" class="waiting">클릭해서 시작하세요~</div><br>
+결과 : <div id="result"></div>
+
+<script>
+    const $screen = document.querySelector('#screen');
+    const $result = document.querySelector('#result');
+
+    let start;
+    let end;
+    $screen.addEventListener('click',e =>{
+    if(e.target.classList.contains('waiting')){
+        $screen.classList.remove('waiting');
+        $screen.classList.add('ready');
+        $screen.textContent = '초록색이 되면 클릭하세요';
+
+        setTimeout(function () {
+            start = new Date();
+            console.log(start);
+            $screen.classList.remove('ready');
+            $screen.classList.add('now');
+            $screen.textContent = '클릭하세요!';
+
+            
+        },Math.floor(Math.random()*1000) + 2000);
+
+    }else if (e.target.classList.contains('ready')){
+        alert('성급했어요~ 다시~');
+        $screen.classList.remove('ready');
+        $screen.classList.add('waiting');
+    }else if (e.target.classList.contains('now')){
+        $screen.classList.remove('now');
+        $screen.classList.add('waiting');
+         end =new Date();
+         console.log(end);
+         console.log(start);
+        $result.textContent = `${end - start} ms`;
+
+        $screen.textContent = '클릭해서 시작하세요~';
+    }
+    });
+
+</script>
+<body>
+   
+</body>
+
+</html>
