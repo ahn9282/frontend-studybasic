@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <style>
+ 
+ </style>
+<script> 
+  $(document).ready(function(){
+    $("p").each(function(index,value){
+      if(index===0)$(value).css("background","red");
+      if(index===1)$(value).css("background","blue");
+      if(index===2)$(value).css("background","yellow");
+    })
+    
+        console.log($("#htmlMethod").html());//자식인 태그까지 다 가져옴
+        console.log($("#textMethod").text());//텍스트만을 가져옴
+        
+
+        $("#htmlMethod").html("안녕하세요!</br>");//태그가 작용
+        $("#htmlMethod").text("안녕하세요!<br>");// 태그 미작용
+        //둘 다 innerHTML이다.
+
+        $("#addClass").addClass("addCla");
+        $(".addCla").css("background","red");
+
+        $(".remCla").css("background","#00ff00");
+
+        $("#attrMethod img").attr("src","/images/2.png");
+        $("#attrMethod img").removeAttr("src");
+        $("#attrMethod img").attr("src","/images/2.png");
+        $("#cssMethod").css("background","#ff129d");
+        $("#cssMethod").css("width","300px").css("height","100px");
+        //$("#cssMethod").remove(); //선택자 객체 삭제
+        $("#cssMethod").empty(); //innerHTML=""과 동일
+    })
+</script>
+
+</head>
+<body>
+  <p> Hello javascript! </p>
+  <p> Hello jQuery! </p>
+  <p> Hello node.js! </p>
+  
+  <div id="htmlMethod"><p> html() 메서드</p> </div>
+  <div id="textMethod"><p> text() 메서드</p></div>
+  
+  <div id="addClass"> addClass() 메서드 </div>
+  <div id="removeClass" class="remCla"> removeClass() 메서드 </div>
+  
+  <div id="attrMethod">
+     <img>
+     <br>
+     <img>
+  </div>
+  
+  <div id="cssMethod"> CSS METHOD </div>
+  
+  <div id="removeMthod"> Remove Object! </div>
+  <div id="emptyMthod"> Empty Object! </div>
+
+</body>
+</html>

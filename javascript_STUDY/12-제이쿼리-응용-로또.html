@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <style>
+ 
+    #wrap{
+      display: flex;
+      flex-direction: row;
+     
+    }
+    #wrap div{
+      margin: 0;
+      padding: 0;
+    }
+    
+ </style>
+<script> 
+  $(document).ready(function(){
+    let arr=new Array();
+    let color = ['green','blue','red','aqua','yellow'];
+    let set = new Set();
+    let $wrap = $("#wrap");
+    while(set.size<6){
+      let num = Math.ceil(Math.random()*45);
+      set.add(num);
+    }
+    arr=Array.from(set);
+    console.log(arr);
+
+    $.each(arr,function(index,value){
+      let getColor = Math.floor(value/10);
+      $("<div>"+value+"</div>").appendTo($wrap).css("background",color[getColor])
+      .css("width","150px").css("height","150px").css("textAlign","center").css("lineHeight","150px")
+      .css("borderRadius","50%");
+      
+    })
+
+
+    
+    
+  });
+</script>
+
+</head>
+<body>
+  <div id="wrap">
+    
+  </div>
+
+</body>
+</html>
