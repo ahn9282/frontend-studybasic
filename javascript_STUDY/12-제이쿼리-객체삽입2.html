@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <style>
+  #wrap .contents1 .p {
+      background: #ff0000;
+    }
+    #wrap .contents2 .p {
+      background: #ffff00;
+    }
+    #wrap .contents2 .p:nth-child(2n) {
+      background: red;
+    }
+    
+ </style>
+<script> 
+  $(document).ready(function(){
+    let $wrap = $("#wrap > .contents2");
+    let $cont1 = $("#wrap > .contents1 > p");
+   $cont1.appendTo($wrap);
+  });
+</script>
+
+</head>
+<body>
+  <div id="wrap">
+    <div class="contents1">
+      <p class="p">contents1</p>
+    </div>
+    
+    <div class="contents2">
+      <p class="p">contents2</p>
+      
+    </div>
+  </div>
+
+</body>
+</html>

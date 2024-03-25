@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+
+
+   
+    $(document).ready(function(){
+
+$("input[type=text]").css("color","red");
+$("input[type=password]").css("color","#0000ff");
+$("input:submit").css("background","blue");
+
+  let chk = $("input:checked").val();//checked되있는 것 하나, 맨 위에것 하나만
+  //제이쿼리는 js와 다르게 값을 가져오는 함수 .val()를 사용해야먄한다.
+  console.log(chk);
+
+  $("li:nth-child(2n+1)").css("background","#ff9a00");
+  $("ul").css("listStyle","none");
+    })
+  
+  </script>
+</head>
+<body>
+  <form>
+    UserID <input type="text">
+    <br />
+    UserPW <input type="password">
+    <br />
+    Submit <input type="submit" value="submit">
+    <br />
+    Reset <input type="reset" value="reset">
+    <br />
+    Food <br />
+    사과<input type="checkbox" id="apple" value="사과" />
+    바나나<input type="checkbox" id="banana" value="바나나" checked />
+    수박<input type="checkbox" id="watermelon" value="수박"/>
+    <br />
+    
+    <ul>
+       <li>이만기</li>
+       <li>이승엽</li>
+       <li>이종범</li>
+       <li>이재학</li>
+       <li>이순철</li>
+       <li>이길동</li>
+       <li>이동국</li>
+    </ul>
+ </form>
+</body>
+</html>

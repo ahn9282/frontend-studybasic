@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+
+
+   
+    $(document).ready(function(){
+     let wrapObj = $("#wrap");
+
+     let divObj = $("<div>안녕하세요!!</div>");
+      //자식.appendTo(부모)
+      //wrapObj.append(divObj);//부모.append(자식)
+
+      // wrapObj.prepend(divObj);//첫째 자식으로 집어넣음
+
+      // divObj.insertAfter(wrapObj);//막내 자식으로 집어 넣음
+
+      // wrapObj.after(divObj);
+
+      divObj.insertBefore("div div");
+      //divObj.insertBefore("#wrap");id로 css문법으로 가팅 가능
+
+    })
+
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <div>
+      contents
+  </div>
+  
+</body>
+</html>
