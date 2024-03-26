@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+
+  </style>
+  <script>
+    $(document).ready(function () {
+      $('#loginForm').submit( function(event){
+
+        
+        if($('#uId').val() == ""){
+          alert('유저 아이디가 없슴');
+          event.preventDefault();
+        }else if($('#uPw').val() == ""){
+          alert('비밀번호가 없으');
+          event.preventDefault();
+        }else{
+          alert('login!! Hello!');
+        }
+      }
+        )
+
+    })
+    $(document).ready(function () {
+      function eventHandler(e){
+        console.log('click');
+        console.log(this);
+        $(this).css("color","red");
+      }
+      $("#objDiv").click(eventHandler)
+      $("#objPar").click(eventHandler)
+    })
+  </script>
+  <style>
+
+
+
+  </style>
+
+</head>
+
+<body>
+  <form id="loginForm" action="http://www.google.com">
+    USER ID : <input id="uId" type="text" name="uId"><br>
+    USER PW : <input id="uPw" type="password" name="upw"><br>
+    <input id="sbmBtn" type="submit" value="SUBMIT">
+    <input id="resBtn" type="reset" value="RESET">
+  </form>
+  <hr>
+  <div id="objDiv">Object Division</div>
+  <p id="objPar">Object Paragraph</p>
+
+</body>
+
+</html>

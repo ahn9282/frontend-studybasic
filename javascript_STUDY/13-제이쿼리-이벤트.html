@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <style>
+ 
+ </style>
+<script> 
+  $(document).ready(function(){
+    $(".logo").mousedown(function(){
+
+      console.log('클릭');
+    })
+    $(".logo").click(function(){
+
+console.log('클릭');
+})
+
+
+      $("#eDiv").dblclick(function(){
+        console.log("dbclick event!!");
+      });
+      $("#eDiv").mousemove(function(){
+        console.log("mousemove event!!");
+        ($("#eDiv").clone()).appendTo("body");
+      });
+      $("#eDiv").mouseover(function(){
+        console.log("mouseover event!!");
+      });
+    })
+</script>
+<style>
+  #eDiv{
+    width:100px;
+    height: 100px;
+    background: #ff0000;
+    text-align:center;
+    font-weight: bold;
+
+  }
+</style>
+
+</head>
+<body>
+ <div>
+  <img class="logo" src="/images/ice.jpg" onmousedown="">
+ </div>
+ <div id="eDiv">jQuery Event</div>
+
+</body>
+</html>

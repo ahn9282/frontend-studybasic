@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+
+  </style>
+  <script>
+    $(document).ready(function () {
+      $("#btn").click(e =>{
+        let sum = Number($("#v1").val()) + Number($("#v2").val());
+        $('#v3').val(sum);//.val()에 인자를 넣어서 그 값으로 초기화가 된다.
+            })
+
+            $('#quantity').click(e=>{
+              $('#total').empty();
+              let price=$('#price').val();
+              let quantity = $('#quantity').val();
+              console.log(price + ":" + quantity);
+              let total = Number(price )* Number(quantity);
+             $('#total').append(total);
+            })
+            $('#price').keyup(e=>{
+              $('#total').empty();
+              let price=$('#price').val();
+              let quantity = $('#quantity').val();
+              console.log(price + ":" + quantity);
+              let total = Number(price )* Number(quantity);
+             $('#total').append(total);
+            })
+            $('#buttonNumber3').click(e=>{
+              let tot = 0;
+              if($("#banana").checked){
+                tot+=1500;
+                console.log(tot);
+              }
+            })
+
+    })
+  </script>
+  <style>
+
+
+
+  </style>
+
+</head>
+
+<body>
+ <div id="pr1">
+<h1>연산</h1>
+<input type="text" id="v1" value="10">+
+<input type="text" id="v2" value="10">=
+<input type="text" id="v3" value="10">
+<button id="btn">연산</button>
+ </div>  
+ <div id="num2">
+  <h1>2. 총합 구하기</h1>
+가격<input type="text" id="price" value="2500">X
+      수량<select id="quantity">
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+      </select>
+      총합:<span id="total"></span>
+      <br>
+ </div>
+ <div id="num3">
+<h1>3. 총합 구하기</h1>
+<ul>
+  <li>바나나(1000원)<input type="checkbox" name="banana" id="banana" value="바나나"></li>
+  <li>사과(500원)<input type="checkbox" name="apple" id="apple" value="사과"></li>
+  <li>배(1500원)<input type="checkbox" name="polar" id="polar" value="배"></li>
+</ul><br>
+<button type="buttonNumber3" >총합 구하기</button><br>
+선택한 총가격 : <span id="result3"></span>
+ </div>
+</body>
+
+</html>

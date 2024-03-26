@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+
+  </style>
+  <script>
+    $(document).ready(function () {
+      let bodyHtml = "<button id='btn'>버튼</button>";
+      $('body').append(bodyHtml);
+
+      $(bodyHtml).click(function () {
+        alert('팝업');
+      });
+    })
+    $(document).ready(function () {
+      
+      // $("#mylang").children().click(function(){
+      //   $(this).remove();
+      // });
+        
+      $(document).on("click","li",e => {
+        $(e.target).remove();
+      })//document객체 위에 이벤트처리를하여 정적, 동적 둘다 가능하도록 함
+      $("#mylang").append('<li>Jquery</li>');
+      
+    })
+  </script>
+  <style>
+
+
+
+  </style>
+
+</head>
+
+<body>
+  <ul id="mylang">
+    <li>Java</li>
+    <li>Oracle</li>
+    <li>Jsp</li>
+    <li>Mysql</li>
+</ul>   
+</body>
+
+</html>
