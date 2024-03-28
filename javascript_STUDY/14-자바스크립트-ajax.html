@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+
+  </style>
+  <script>
+    let doc = $(document);
+    $(document).ready(() =>{
+      $.ajax({
+        type: "get",
+        url: "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json",
+        success: function (data) {
+          console.log(data);
+          document.write(data.squadName +"<br>");
+          document.write(data.members[2].name + "<br>");
+          $(data.members).each((index,value) => {
+            document.write(value.name + "<br>");
+          })
+        },
+        error: function (xhr, textStatus, errorThrown) {
+          console.log("에러발생");
+          console.log(xhr);
+          console.log(textStatus);
+          console.log(errorThrown);
+        }
+      });
+
+
+    })
+
+  </script>
+
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

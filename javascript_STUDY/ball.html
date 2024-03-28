@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>핀볼 게임</title>
+<style>
+    /* 필요한 CSS 스타일을 작성합니다. */
+    body {
+        margin: 0;
+        overflow: hidden; /* 화면 스크롤 방지 */
+    }
+
+    #board {
+        width: 600px;
+        height: 400px;
+        background-color: #222;
+        position: relative;
+        margin: 50px auto;
+        overflow: hidden;
+    }
+
+    .ball {
+        width: 20px;
+        height: 20px;
+        background-color: #ffffff; /* 공의 배경색 흰색으로 변경 */
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .paddle {
+        width: 100px;
+        height: 10px;
+        background-color: #fff;
+        position: absolute;
+        bottom: 10px;
+        left: 250px;
+    }
+
+    .start-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+    <button class="start-btn" id="startBtn">게임 시작</button>
+
+    <div id="board" style="display: none;">
+        <div id="ball" class="ball"></div>
+        <div id="paddle" class="paddle"></div>
+    </div>
+
+    <script>
+        // 필요한 JavaScript 코드를 작성합니다.
+        const board = document.getElementById('board');
+        const ball = document.getElementById('ball');
+        const paddle = document.getElementById('paddle');
+        let dx = 0; // 공의 x축 이동 속도 초기화
+        let dy = 0; // 공의 y축 이동 속도 초기화
+        let paddleX = 250; // 패들의 x축 위치
+
+        // 공의 초기 위치 설정
+        ball.style.left = (board.offsetWidth - ball.offsetWidth) / 2 + 'px';
+        ball.style.top = (board.offsetHeight - ball.offsetHeight) / 2 + 'px';
+
+        // 공이 나오도록 함수 정의
+        function shootBall() {
+            // 공을 보드의 중앙에 배치
+            ball.style.left = (board.offsetWidth - ball.offsetWidth) / 2 + 'px';
+            ball.style.top = (board.offsetHeight - ball.offsetHeight) / 2 + 'px';
+            
+            // 공의 이동 속도 설정
+            dx = 2;
+            dy = -2;
+        }
+
+        function moveBall() {
+            const ballRect = ball.getBoundingClientRect();
+            const paddleRect = paddle.getBoundingClientRect();
+
+            // 공의 이동
+            ball.style.left = ballRect.left + dx + 'px';
+            ball.style.top = ballRect.top + dy + 'px';
+
+            // 공이 벽에 닿았을 때 방향 변경
+            if (ballRect.left <= 0 || ballRect.right >= board.offsetWidth) {
+                dx = -dx;
+            }
+            if (ballRect.top <= 0 || ballRect.bottom >= board.offsetHeight) {
+                dy = -dy;
+            }
+
+            // 패들과 공이 충돌했을 때 방향 변경
+            if (ballRect.right >= paddleRect.left && ballRect.left <= paddleRect.right && ballRect.bottom >= paddleRect.top) {
+                dy = -dy;
+            }
+
+            requestAnimationFrame(moveBall);
+        }
+
+        // 패들 이동
+        function movePaddle(e) {
+            const mouseX = e.clientX;
+            paddleX = mouseX - board.getBoundingClientRect().left - paddle.offsetWidth / 2;
+            paddle.style.left = paddleX + 'px';
+        }
+
+        // 시작 버튼 클릭 시 게임 시작
+        document.getElementById('startBtn').addEventListener('click', function() {
+            document.getElementById('board').style.display = 'block'; // 게임 보드 표시
+            this.style.display = 'none'; // 시작 버튼 숨기기
+            shootBall(); // 공 발사
+            document.addEventListener('mousemove', movePaddle); // 마우스 이벤트 리스너 추가
+            moveBall(); // 게임 시작
+        });
+
+        // 마우스 클릭 시 공 발사
+        document.addEventListener('click', function() {
+            shootBall();
+        });
+    </script>
+</body>
+</html>

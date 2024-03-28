@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <style>
+ 
+ </style>
+<script> 
+class User{
+  constructor(name){
+    this.name=name;
+  }
+  sayHi(){
+    console.log(this.name);
+  }
+}
+console.log(typeof User);
+let user = new User('홍길동');
+user.sayHi();
+
+class Grade{
+  constructor(a,b,c){
+    this.a=a;
+    this.b=b;
+    this.c=c;
+  }
+  getAvg(){
+ return (this.getTotal()/3).toFixed(2);
+  }
+  getTotal(){
+    return (this.a+this.b+this.c);
+  }
+  getGrade(){
+    let avg=this.getAvg();
+    if(avg >=90){
+      return "수";
+    }else if(avg >=80){
+      return "우";
+    }else if(avg >=70){
+      return "미";
+    }else {
+      return "양";
+    }
+  }
+}
+
+let grade = new Grade(90,80,70);
+let $avg=grade.getAvg();
+let $tot=grade.getTotal();
+let $gtd=grade.getGrade();
+
+console.log("합은" +$tot +" 평군은 " +$avg+" 등급은 "+$gtd);
+
+</script>
+
+
+</head>
+<body>
+
+
+</body>
+</html>
