@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>바 템플릿</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      let $home_user_bar = $("#home_user_bar");
+     let $sub_bar = $("#sub_bar");
+     let $total_bar = $("#total_bar");
+
+      let $ul = $("#home_user_bar").addClass("nav ");
+      let $li1 = $("<li>").text("1").css("color", "red").addClass("px-3");
+      let $li2 = $("<li>").text("2").css("color", "blue").css("border-left", "1px solid #aaaaaa").addClass("px-3");
+      let $li3 = $("<li>").text("3").css("color", "green").css("border-left", "1px solid #aaaaaa").addClass("px-3");
+
+      $li1.mouseenter(function () {
+        $sub_bar.css("display","block");
+        $("#sub_bar").children().remove();
+        let $subUl = $("<ul>").addClass("sub-nav").appendTo($sub_bar);
+        let $subLi1 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+        $("<a>").attr("href", "https://www.naver.com").text("1-1").css("text-decoration","none").appendTo($subLi1);
+        let $subLi2 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+          $("<a>").attr("href", "https://google.com").text("1-2").css("text-decoration","none").appendTo($subLi2);
+        let $subLi3 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+          $("<a>").attr("href", "https://www.daum.net").text("1-3").css("text-decoration","none").appendTo($subLi3);
+
+      });
+      $li2.mouseenter(function () {
+        $sub_bar.css("display","block");
+        $("#sub_bar").children().remove();
+        let $subUl = $("<ul>").addClass("sub-nav").appendTo($sub_bar);
+        let $subLi1 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+        $("<a>").attr("href", "https://www.naver.com").text("2-1").css("text-decoration","none").appendTo($subLi1);
+        let $subLi2 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+          $("<a>").attr("href", "https://google.com").text("2-2").css("text-decoration","none").appendTo($subLi2);
+        let $subLi3 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+          $("<a>").attr("href", "https://www.daum.net").text("2-3").css("text-decoration","none").appendTo($subLi3);
+
+      });
+      $li3.mouseenter(function () {
+        $sub_bar.css("display","block");
+        $("#sub_bar").children().remove();
+        let $subUl = $("<ul>").addClass("sub-nav").appendTo($sub_bar);
+        let $subLi1 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+        $("<a>").attr("href", "https://www.naver.com").text("3-1").css("text-decoration","none").appendTo($subLi1);
+        let $subLi2 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+          $("<a>").attr("href", "https://google.com").text("3-2").css("text-decoration","none").appendTo($subLi2);
+        let $subLi3 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+          $("<a>").attr("href", "https://www.daum.net").text("3-3").css("text-decoration","none").appendTo($subLi3);
+
+      });
+
+  
+      $total_bar.mouseleave(function () {
+        $("#sub_bar").css("display","none");
+        
+      });
+      $ul.append($li1, $li2, $li3);
+
+
+    });
+
+  </script>
+  <style>
+    #home_user_bar {
+      width: 100%;
+      height: 20%;
+      padding: 1em;
+      color: red;
+      background-color: #ffffff;
+      border: 1px solid #aaaaaa;
+      
+    }
+    #content{
+      background-color: aqua;
+      
+    }
+    #sub_bar{
+      width:100%;
+      padding: 1em;
+      height:30%;
+      display: none;
+      position: absolute;
+      top: 100%; /* 이전 요소의 아래쪽에 배치 */
+      left: 0;
+      z-index: 999;
+    }
+   
+    ul{
+      list-style: none;
+    }
+    
+  </style>
+
+</head>
+
+<body>
+  <header>
+
+    <div id="title" class="w-100" style="height:180px; background-color: brown;">제목?</div>
+    <nav id="total_bar">
+
+      <div id="home_user_bar"> </div>
+      <div id="sub_bar"></div>
+    </nav>
+  </header>
+  <div id="content" class="w-100 "  style="height:600px;">
+내용
+
+  </main>
+
+</body>
+
+</html>
