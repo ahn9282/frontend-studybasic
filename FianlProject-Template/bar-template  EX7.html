@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed Div</title>
+<style>
+    /* 설정할 div 요소의 스타일 */
+    #fixedDiv {
+        position: fixed; /* 위치를 고정시킵니다. */
+        top: 0; /* 페이지 상단으로 고정시킵니다. */
+        left: 0; /* 페이지 좌측으로 고정시킵니다. */
+        width: 100%; /* 페이지의 전체 너비를 차지합니다. */
+        background-color: lightblue; /* 배경색을 설정합니다. */
+        padding: 20px; /* 내용과 경계 사이의 여백을 설정합니다. */
+        box-sizing: border-box; /* padding을 포함한 요소의 크기를 조정합니다. */
+    }
+
+    /* 추가적인 스타일은 필요에 따라 설정합니다. */
+    /* 다른 요소들이 fixed div 아래에 나오도록 설정할 수 있습니다. */
+    /* 예를 들어, content 영역에 padding-top 값을 fixed div의 높이만큼 설정하면 됩니다. */
+    #content {
+        padding-top: 100px; /* fixed div의 높이만큼 content 영역을 내리도록 설정합니다. */
+    }
+</style>
+</head>
+<body>
+
+<div id="fixedDiv">
+    <!-- 여기에 고정된 내용을 입력합니다. -->
+    <h2>Fixed Div</h2>
+    <p>이 div는 페이지 상단에 고정되어 있습니다.</p>
+</div>
+
+<div id="content">
+    <!-- 고정된 div 아래에 있는 내용입니다. -->
+    <h2>Content</h2>
+    <p>이 내용은 고정된 div 아래에 나타납니다.</p>
+    <p>내용이 많아져도 페이지를 스크롤하지 않습니다.</p>
+</div>
+
+</body>
+</html>

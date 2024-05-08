@@ -4,20 +4,32 @@ $(document).ready(function () {
    let $total_bar = $("#total_bar");
 
     let $ul = $("#home_user_bar").addClass("nav ");
-    let $li1 = $("<li>").text("1").css("color", "red").addClass("px-3");
-    let $li2 = $("<li>").text("2").css("color", "blue").css("border-left", "1px solid #aaaaaa").addClass("px-3");
-    let $li3 = $("<li>").text("3").css("color", "green").css("border-left", "1px solid #aaaaaa").addClass("px-3");
+    let $li1 = $("<li>").text("쇼핑하기").css("color", "red").addClass("px-3 py-2").attr("id","nav-links");
+    let $li2 = $("<li>").text("공지사항 둘러보기").css("color", "blue").addClass("px-3 py-2").attr("id","nav-links");
+    let $li3 = $("<li>").text("위치 찾아보기").css("color", "green").addClass("px-3 py-2").attr("id","nav-links");
+    let $barbtn = $("<button>").addClass("btn btn-ouyline-dark").attr("id","barbtn").text("☰");
+    let $link1_1 =  $("<a>").attr("href", "https://www.naver.com").text("1-1").css("text-decoration","none");
+    let $link1_2 =  $("<a>").attr("href", "https://www.naver.com").text("1-2").css("text-decoration","none");
+    let $link1_3 =  $("<a>").attr("href", "https://www.naver.com").text("1-3").css("text-decoration","none");
+    let $link2_1 =  $("<a>").attr("href", "https://www.naver.com").text("2-1").css("text-decoration","none");
+    let $link2_2 =  $("<a>").attr("href", "https://www.naver.com").text("2-2").css("text-decoration","none");
+    let $link2_3 =  $("<a>").attr("href", "https://www.naver.com").text("2-3").css("text-decoration","none");
+    let $link3_1 =  $("<a>").attr("href", "https://www.naver.com").text("3-1").css("text-decoration","none");
+    let $link3_2 =  $("<a>").attr("href", "https://www.naver.com").text("3-2").css("text-decoration","none");
+    let $link3_3 =  $("<a>").attr("href", "https://www.naver.com").text("3-3").css("text-decoration","none");
+    let side_h = document.documentElement.clientHeight;
+    let $side_bar = $("#side_bar").css("height",side_h);
 
     $li1.mouseenter(function () {
       $sub_bar.css("display","block");
       $("#sub_bar").children().remove();
       let $subUl = $("<ul>").addClass("sub-nav").appendTo($sub_bar);
       let $subLi1 = $("<li>").addClass("sub-px-3").appendTo($subUl);
-      $("<a>").attr("href", "https://www.naver.com").text("1-1").css("text-decoration","none").appendTo($subLi1);
+     $link1_1.appendTo($subLi1);
       let $subLi2 = $("<li>").addClass("sub-px-3").appendTo($subUl);
-        $("<a>").attr("href", "https://google.com").text("1-2").css("text-decoration","none").appendTo($subLi2);
+      $link1_2.appendTo($subLi2);
       let $subLi3 = $("<li>").addClass("sub-px-3").appendTo($subUl);
-        $("<a>").attr("href", "https://www.daum.net").text("1-3").css("text-decoration","none").appendTo($subLi3);
+      $link1_3.appendTo($subLi3);
 
     });
     $li2.mouseenter(function () {
@@ -25,11 +37,11 @@ $(document).ready(function () {
       $("#sub_bar").children().remove();
       let $subUl = $("<ul>").addClass("sub-nav").appendTo($sub_bar);
       let $subLi1 = $("<li>").addClass("sub-px-3").appendTo($subUl);
-      $("<a>").attr("href", "https://www.naver.com").text("2-1").css("text-decoration","none").appendTo($subLi1);
+     $link2_1.appendTo($subLi1);
       let $subLi2 = $("<li>").addClass("sub-px-3").appendTo($subUl);
-        $("<a>").attr("href", "https://google.com").text("2-2").css("text-decoration","none").appendTo($subLi2);
+      $link2_2.appendTo($subLi2);
       let $subLi3 = $("<li>").addClass("sub-px-3").appendTo($subUl);
-        $("<a>").attr("href", "https://www.daum.net").text("2-3").css("text-decoration","none").appendTo($subLi3);
+      $link2_3.appendTo($subLi3);
 
     });
     $li3.mouseenter(function () {
@@ -37,20 +49,35 @@ $(document).ready(function () {
       $("#sub_bar").children().remove();
       let $subUl = $("<ul>").addClass("sub-nav").appendTo($sub_bar);
       let $subLi1 = $("<li>").addClass("sub-px-3").appendTo($subUl);
-      $("<a>").attr("href", "https://www.naver.com").text("3-1").css("text-decoration","none").appendTo($subLi1);
+      $link3_1.appendTo($subLi1);
       let $subLi2 = $("<li>").addClass("sub-px-3").appendTo($subUl);
-        $("<a>").attr("href", "https://google.com").text("3-2").css("text-decoration","none").appendTo($subLi2);
+      $link3_2.appendTo($subLi2);
       let $subLi3 = $("<li>").addClass("sub-px-3").appendTo($subUl);
-        $("<a>").attr("href", "https://www.daum.net").text("3-3").css("text-decoration","none").appendTo($subLi3);
+      $link3_3.appendTo($subLi3);
 
     });
 
+    $barbtn.on("click",function(){
+
+    });
+
+    $barbtn.on("click", function(){
+
+        $side_bar.css("display","block");
+       
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
 
     $total_bar.mouseleave(function () {
       $("#sub_bar").css("display","none");
       
     });
-    $ul.append($li1, $li2, $li3);
+    $ul.append($li1, $li2, $li3,$barbtn);
 
 
   });
