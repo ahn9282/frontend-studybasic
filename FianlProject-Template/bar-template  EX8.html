@@ -18,7 +18,8 @@
   <style>
     body {
       position: relative;
-     
+     display: flex;
+     flex-direction: column;
     }
 
     footer p {
@@ -32,21 +33,13 @@
       font-size: 1em;
       font-weight: bold;
     }
+    header{
+      position: relative;
+    }
 
-main{
-  position: absolute;
-width:100%;
-  overflow-y: auto; 
-}
 
     footer {
-      position: absolute;
-
-      position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
+      position: relative;
       width: 100%;
       bottom: 0;
       display: flex;
@@ -106,13 +99,15 @@ width:100%;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 10px;
       height: auto;
       flex-grow: 1;
     }
     #first_footer,#third_footer, #second_footer{
       border:0;
       flex-grow: 1;
+    }
+    main{
+      overflow: hidden;
     }
  
   }
