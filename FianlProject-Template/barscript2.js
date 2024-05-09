@@ -24,7 +24,14 @@ $(document).ready(function () {
   $side_bar.append($link1_1,$link1_2,$link1_3,$link2_1,$link2_2,$link2_3,$link3_1,$link3_2,$link3_3);
 
   function hideSideBar() {
-      $side_bar.css("display", "none");
+    $side_bar.css("animation", "slideLeftFromIn 0.3s ease-in-out forwards");
+    setTimeout(function() {
+        $side_bar.css("display", "none");
+    }, 300);
+  }
+  function showSideBar() {
+      $side_bar.css("animation", "slideInFromLeft 0.3s ease-in-out forwards");
+      $side_bar.css("display","block");
   }
 
 
@@ -69,7 +76,7 @@ $(document).ready(function () {
       if ($side_bar.css("display") === "block") {
           hideSideBar();
       } else { 
-          $side_bar.css("display", "block");
+        showSideBar();
       }
   });
 

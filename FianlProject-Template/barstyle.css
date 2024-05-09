@@ -60,7 +60,7 @@ position: relative;
 
  
 
-  @keyframes slideInFromTop {
+  @keyframes slideInFromLeft {
     0% {
       transform: translateX(-100%);
       opacity: 0;
@@ -71,6 +71,17 @@ position: relative;
     }
   }
 
+  @keyframes slideLeftFromIn {
+    from {
+      transform: translateX(0);
+     
+    }
+    to {
+      transform: translateX(-100%);
+     
+    }
+  }
+
   #side_bar{
-    animation: slideInFromTop 0.3s ease-in-out forwards;
+    animation: slideInFromLeft 0.3s ease-in-out forwards;
   }
