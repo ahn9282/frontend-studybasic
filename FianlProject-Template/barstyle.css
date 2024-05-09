@@ -72,5 +72,5 @@ position: relative;
   }
 
   #side_bar{
-    animation: slideInFromTop 0.5s ease-in-out forwards;
+    animation: slideInFromTop 0.3s ease-in-out forwards;
   }
