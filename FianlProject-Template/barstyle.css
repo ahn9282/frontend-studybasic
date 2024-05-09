@@ -45,7 +45,7 @@ position: relative;
     background-color: red;
     display: none;
     color:black;
-    display: flex;
+    position: absolute;
     flex-direction: column;
   }
   @media screen and (max-width: 520px) {
@@ -56,4 +56,21 @@ position: relative;
     #barbtn {
       display: block;
     }
+  }
+
+ 
+
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  #side_bar{
+    animation: slideInFromTop 0.5s ease-in-out forwards;
   }
