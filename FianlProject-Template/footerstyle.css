@@ -6,7 +6,7 @@ body {
 
 footer p {
   padding: 0;
-  font-size: 0.5em;
+  font-size: 0.8em;
   margin: 5px;
 }
 
@@ -31,11 +31,12 @@ footer {
   padding: 10px;
   background-color: #dddddd;
   height: auto;
+  border-top:1px solid #cccccc;
   
 }
 
 footer > div {
-  width: 25%;
+  width: 22%;
   height: 100%;
   min-width: 200px;
 }
@@ -55,7 +56,7 @@ footer > div {
 
 footer a {
   text-decoration: none;
-  font-size: 0.5em;
+  font-size: 0.8em;
   margin: 5px;
   color: black;
 }
@@ -74,6 +75,8 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin-left: 1em;
 }
 @media screen and (max-width: 640px) {
   footer {

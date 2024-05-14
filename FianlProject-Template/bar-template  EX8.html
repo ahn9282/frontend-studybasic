@@ -19,32 +19,57 @@
   </script>
   <link href="footerstyle.css?after" rel="stylesheet">
   <link href="barstyle.css?after" rel="stylesheet">
- <style>
 
- </style>
+  <link rel="stylesheet" href="https://webfontworld.github.io/NanumSquare/NanumSquare.css">
+
+  <style>
+    @font-face {
+      font-family: 'fonts';
+      src: url("https://webfontworld.github.io/NanumSquare/NanumSquare.css") fotmat('font1');
+    }
+
+    body {
+      font-family: 'fonts', NanumSquare;
+      background-color: #f7f0e8;
+    }
+
+    #logo_img {
+      width: 3.5em;
+      height: 3em;
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <div id="title" class="w-100 fixed-top" style="height:80px; background-color: brown;"></div>
-    <div class="w-100" style="height:80px;"></div>
+    <div id="title_bar" class=" fixed-top">
+      <div class="py-2 px-1" id="top-bar">
+
+        <button type="toggle-button" class="top_btn" id="top_btn"></button>
+        <a href=""><img id="logo_img" src="logo.png"></a>
+        <form action="http://www.naver.com" id=searchForm method="get">
+
+        </form>
+        <a id="cart_link"><img id="cart_img"></a>
+        <a id="user_link"><img id="login_img"></a>
+      </div>
+
+    </div>
     <nav id="total_bar">
-
       <div id="home_user_bar"> </div>
-
       <div id="sub_bar"></div>
-      <div id="side_bar"></div>
-
-
+    </div>
+    <div id="side_bar">
     </nav>
   </header>
-  
+
   <main>
 
-    <div id="content" class="w-100 " style="height:800px;">
-      내용
+    <div id="main_container" style="height:800px;">
+      내용입니다. content~~<br>
+      <a href="asd" class="button" id="linked_btn">click</a>
     </div>
-   
+
   </main>
 
   <footer>
@@ -52,7 +77,7 @@
     <div id="second_footer"></div>
     <div id="third_footer"></div>
   </footer>
-  
+
 </body>
 
 </html>
