@@ -22,7 +22,7 @@ header {
   flex-direction: row;
   align-items: center;
   margin: 0;
-  height: auto;
+  height: 65px;
 }
 
 #home_user_bar {
@@ -42,7 +42,7 @@ header {
 }
 
 #total_bar {
-  margin-top: 4.5%;
+  margin-top: 65px;
   background-color: #95857F;
   display: flex;
   flex-direction: column;
@@ -96,9 +96,7 @@ main {
   margin-top: 0.5em;
 }
 
-#list_category>li {
-  margin-left: 3em;
-}
+
 
 .sub-nav {
 
@@ -136,23 +134,73 @@ nav {
   background-color: white;
   display: none;
   color: black;
-  position: absolute;
+  position: relative;
   flex-direction: column;
   padding: 0;
   margin: 0;
   border-right: 1px solid #cccccc;
+  background-color: #4CAF50;
 }
 
-@media screen and (max-width: 520px) {
-  #nav-links {
-    display: none;
-  }
+@media screen and (max-width: 560px) {}
+
+@media screen and (max-width: 720px) {
 
   #barbtn {
     display: block;
   }
+  #list_category>li {
+    margin-left: 0em;
+  }
 }
 
+@media screen and (max-width: 640px) {
+  #total_bar {
+    height: 0;
+  }
+
+  #top-bar,
+  #home_user_bar,
+  #header_container,
+  #main_container {
+    width: 100%;
+
+  }
+
+  #side_bar {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+
+  #barbtn {
+    display: block;
+  }
+
+ 
+}
+
+
+
+@media screen and (max-width: 1120px) and  (min-width: 860px) {
+
+  #top-bar,
+  #home_user_bar,
+  #header_container,
+  #main_container {
+    width: 88%;
+
+  }
+
+  #side_bar {
+    width: 20%;
+  }
+
+  #list_category>li {
+    margin-left: 3em;
+  }
+}
 
 
 @keyframes slideInFromLeft {
@@ -232,9 +280,7 @@ nav {
 
 }
 
-#searchIn {
-  width: 20em;
-}
+
 
 #searchForm {
   border-bottom: 5PX SOLID #222222;
