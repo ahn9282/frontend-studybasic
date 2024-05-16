@@ -331,7 +331,7 @@
       display: none;
       color: black;
       position: fixed;
-      top: 65px;
+      top: 130px;
       left: 0;
       z-index: 999;
       padding: 0;
@@ -340,7 +340,15 @@
 
     }
 
-    @media screen and (max-width: 560px) {}
+    /* 아이콘 이미지 css */
+    #icon_wrap img{
+      width: 8vw;
+      height: 8vw;
+      min-width: 134px;
+      min-height: 134px;
+      border-radius : 100px;
+      margin-right: 2vw;
+    }
 
     @media screen and (max-width: 720px) {
 
@@ -350,6 +358,12 @@
 
       #list_category>li {
         margin-left: 0em;
+      }
+    /* 아이콘 이미지 css 720px*/
+      #icon_wrap img{
+
+        min-width: 100px;
+        min-height: 100px;
       }
     }
 
@@ -401,7 +415,12 @@
       }
     }
 
-
+    @media screen and (max-width: 560px) {
+      /* 아이콘 이미지 css 560px*/
+      #icon_wrap img{
+        display: none;
+      }
+    }
     @keyframes slideInFromLeft {
       0% {
         transform: translateX(-100%);
@@ -541,9 +560,16 @@
   <div id="side_bar"> 사이드바</div>
   <main>
 
-    <div id="main_container" style="height:800px;">
+    <div id="main_container" style="height:800px; ">
       내용입니다. content~~<br>
-      <a href="asd" class="button" id="linked_btn">click</a>
+      <!-- 이미지 크기 조정하기 싶을시 >아이콘 이미지 css< 검색 -->
+      <div id="icon_wrap" class="d-flex justify-content-center container px-5">
+        <a href=""><img src="sear.png" alt=""></a>
+        <a href=""><img src="cartShop.png" alt=""></a>
+        <a href=""><img src="KakaoTalk_20240514_154908728_02.png" alt=""></a>
+        <a href=""><img src="KakaoTalk_20240514_154908728_01.png" alt=""></a>
+        <a href=""><img src="KakaoTalk_20240514_154908728.png" alt=""></a>
+      </div>
     </div>
 
   </main>

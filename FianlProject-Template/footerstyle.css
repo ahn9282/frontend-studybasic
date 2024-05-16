@@ -94,6 +94,8 @@ footer a {
   margin: 0;
   padding: 0;
 
+  width:100%;
+
 }
 #third_footer, #second_footer{
 
@@ -103,4 +105,21 @@ main{
   overflow: hidden;
 }
 
+}
+@media screen and (max-width: 1120px){
+  #first_footer,#third_footer, #second_footer{
+    border:0;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+  
+    width:100%;
+  
+  }
+}
+@media screen and (max-width: 1480px){
+  #first_footer,#third_footer, #second_footer{
+    width:100%;
+  
+  }
 }

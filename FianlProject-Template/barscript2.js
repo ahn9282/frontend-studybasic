@@ -3,48 +3,163 @@ $(document).ready(function () {
   let $sub_bar = $("#sub_bar");
   let $total_bar = $("#total_bar");
 
-  //상강 카테고리 바 분류
+
+  //상단 카테고리 바 분류
   let $ul = $("<ul>").attr("id", "list_category").appendTo($home_user_bar);
   let $li1 = $("<li>").css("order", "1").text("가구").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
   let $li2 = $("<li>").css("order", "2").text("패브릭").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
-  let $li3 = $("<li>").css("order", "3").text("쇼핑하기").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
-  let $li4 = $("<li>").css("order", "4").text("생활소품").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
-  let $li5 = $("<li>").css("order", "5").text("인테리어").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
+  let $li3 = $("<li>").css("order", "3").text("생활소품").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
+  let $li4 = $("<li>").css("order", "4").text("인테리어").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
+  let $li5 = $("<li>").css("order", "5").text("주방용품").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
 
-  //카테고리 분류 바 순서대로 링크
-  let $link1_1 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("1-1").css("text-decoration", "none");
-  let $link1_2 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("1-2").css("text-decoration", "none");
-  let $link1_3 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("1-3").css("text-decoration", "none");
+//카테고리 별 링크 변수
+  let link1_1 = "https://www.naver.com";
+  let link1_2 = "https://www.naver.com";
+  let link1_3 = "https://www.naver.com";
+  let link2_1 = "https://www.google.com";
+  let link2_2 = "https://www.google.com";
+  let link2_3 = "https://www.google.com";
+  let link3_1 = "https://www.daum.net";
+  let link3_2 = "https://www.daum.net";
+  let link3_3 = "https://www.daum.net";
+  let link4_1 = "https://store.ohou.se/exhibitions/12390";
+  let link4_2 = "https://store.ohou.se/exhibitions/12390";
+  let link4_3 = "https://store.ohou.se/exhibitions/12390";
+  let link5_1 = "https://velog.io/";
+  let link5_2 = "https://velog.io/";
+  let link5_3 = "https://velog.io/";
+
   
-  let $link2_1 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("2-1").css("text-decoration", "none");
-  let $link2_2 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("2-2").css("text-decoration", "none");
-  let $link2_3 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("2-3").css("text-decoration", "none");
-  
-  let $link3_1 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("3-1").css("text-decoration", "none");
-  let $link3_2 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("3-2").css("text-decoration", "none");
-  let $link3_3 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("3-3").css("text-decoration", "none");
-  
-  let $link4_1 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("4-1").css("text-decoration", "none");
-  let $link4_2 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("4-2").css("text-decoration", "none");
-  let $link4_3 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("4-3").css("text-decoration", "none");
+  let $link1_1 = $("<a>").attr("href", link1_1).addClass("btn").text("1-1").css("text-decoration", "none");
+  let $link1_2 = $("<a>").attr("href", link1_2).addClass("btn").text("1-2").css("text-decoration", "none");
+  let $link1_3 = $("<a>").attr("href", link1_3).addClass("btn").text("1-3").css("text-decoration", "none");
 
-  let $link5_1 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("5-1").css("text-decoration", "none");
-  let $link5_2 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("5-2").css("text-decoration", "none");
-  let $link5_3 = $("<a>").attr("href", "https://www.naver.com").addClass("button").text("5-2").css("text-decoration", "none");
+  let $link2_1 = $("<a>").attr("href", link2_1).addClass("btn").text("2-1").css("text-decoration", "none");
+  let $link2_2 = $("<a>").attr("href", link2_2).addClass("btn").text("2-2").css("text-decoration", "none");
+  let $link2_3 = $("<a>").attr("href", link2_3).addClass("btn").text("2-3").css("text-decoration", "none");
 
+  let $link3_1 = $("<a>").attr("href", link3_1).addClass("btn").text("3-1").css("text-decoration", "none");
+  let $link3_2 = $("<a>").attr("href", link3_2).addClass("btn").text("3-2").css("text-decoration", "none");
+  let $link3_3 = $("<a>").attr("href", link3_3).addClass("btn").text("3-3").css("text-decoration", "none");
 
+  let $link4_1 = $("<a>").attr("href", link4_1).addClass("btn").text("4-1").css("text-decoration", "none");
+  let $link4_2 = $("<a>").attr("href", link4_2).addClass("btn").text("4-2").css("text-decoration", "none");
+  let $link4_3 = $("<a>").attr("href", link4_3).addClass("btn").text("4-3").css("text-decoration", "none");
+
+  let $link5_1 = $("<a>").attr("href", link5_1).addClass("btn").text("5-1").css("text-decoration", "none");
+  let $link5_2 = $("<a>").attr("href", link5_2).addClass("btn").text("5-2").css("text-decoration", "none");
+  let $link5_3 = $("<a>").attr("href", link5_3).addClass("btn").text("5-3").css("text-decoration", "none");
 
   let $searchForm = $("#searchForm");
   let $searchIn = $("<input>").attr("placeholder", "search").attr("id", "searchIn").appendTo($searchForm);
   let $searchBtn = $("<button>").attr("id", "searchBtn").attr("type", "submit");
 
-  $("<img>").attr("src", "sear.png").attr("id", "searchImg").appendTo($searchBtn);//검색창 돋보기 이미지 경로
+  let $searchImg=$("<img>").attr("src", "sear.png").attr("id", "searchImg").appendTo($searchBtn);//검색창 돋보기 이미지 경로
   $searchBtn.appendTo($searchForm);
 
-  let $cartLink = $("#cart_link").attr("href", " http://www.naver.com");//카트 이미지 버튼
+  let $cartLink = $("#cart_link").attr("href", " http://www.naver.com");//카트 이미지 버튼 링크
   let $userLink = $("#user_link").attr("href", " http://www.google.com");//로그인 이미지 버튼 링크
   let $cartImgPath = $("#cart_img").attr("src", "cartShop.png");//카트 이미지 경로
   let $loginImgPath = $("#login_img").attr("src", "login.png");//로그인 이미지 경로
+
+  let $search_icon = $("#search_icon").attr("href","http://www.google.com").append($("<img>").attr("src", "sear.png").attr("id", "searchImg"));
+  
+  
+
+  
+  
+  //사이드 관련
+  let $side_container1 = $("<button>").addClass("side_containers").text("BEST");
+  let $side_container2 = $("<button>").addClass("side_containers").text("커뮤니티");
+  let $side_containerEx = $("<button>").addClass("side_containers").text("카테고리");
+  let $side_container3 = $("<button>").addClass("side_containers").text("고객문의");
+  let $side_container4 = $("<button>").addClass("side_containers").text("공지사항");
+
+  // 클릭 이벤트 추가
+  $side_container1.on('click', function(e){
+      e.stopPropagation();
+      window.location.href = "https://www.google.com";
+  });
+  $side_container2.on('click', function(e){
+      e.stopPropagation();
+      window.location.href = "https://www.naver.com";
+  });
+  $side_container3.on('click', function(e){
+      e.stopPropagation();
+      window.location.href = "https://www.daum.net";
+  });
+  $side_container4.on('click', function(e){
+      e.stopPropagation();
+      window.location.href = "https://store.ohou.se/exhibitions/12390";
+  });
+  
+  
+  let $cate_dv = $("<div>").attr("id","cate_container");
+  let $category1 = $("<button>").addClass("category").text("가구").on('click',function(e){
+    e.stopPropagation();
+
+    if ($(this).children().length === 0) {
+      remove_ct_detail();  
+      $category1.append($link1_1,$link1_2,$link1_3);
+  } else {
+    remove_ct_detail();  
+  }
+  });
+
+  let $category2 = $("<button>").addClass("category").text("패브릭").on('click',function(e){
+    e.stopPropagation();
+    if ($(this).children().length === 0) {
+      remove_ct_detail();  
+      $category2.append($link2_1,$link2_2,$link2_3);
+    } else {
+      remove_ct_detail();  }   
+  
+  });
+
+  let $category3 = $("<button>").addClass("category").text("생활소품").on('click',function(e){
+    e.stopPropagation();
+    if ($(this).children().length === 0) {
+      remove_ct_detail();  
+      $category3.append($link3_1,$link3_2,$link3_3);
+    } else {
+      remove_ct_detail();
+  }    
+ 
+  });
+
+  let $category4 = $("<button>").addClass("category").text("인테리어").on('click',function(e){
+    e.stopPropagation();
+    if ($(this).children().length === 0) {
+      remove_ct_detail();  
+      $category4.append($link4_1,$link4_2,$link4_3);
+    } else {
+      remove_ct_detail();  }   
+
+  });
+
+  let $category5 = $("<button>").addClass("category").text("주방용품").on('click',function(e){
+    e.stopPropagation();
+    if ($(this).children().length === 0) {
+      remove_ct_detail();  
+      $category5.append($link5_1,$link5_2,$link5_3);
+  } else {
+    remove_ct_detail();  }    
+  });
+ 
+  
+  
+  $cate_dv.append($category1, $category2, $category3, $category4, $category5);
+  $side_containerEx.text("카테고리").append($cate_dv);
+  
+  
+
+  let remove_ct_detail = function(){
+    $category1.children().remove();
+    $category2.children().remove();
+    $category3.children().remove();
+    $category4.children().remove();
+    $category5.children().remove();
+  }
 
 
   $li1.mouseenter(function () {
@@ -107,12 +222,21 @@ $(document).ready(function () {
 
   });
 
+  $side_containerEx.on('click', function(e){
+    e.stopPropagation();
+    if($cate_dv.css('display') === "none"){
+
+      $cate_dv.css('display','flex');
+    }else{
+      $cate_dv.css('display','none');
+
+    }
+  });
+
   let $barbtn = $(".top_btn").addClass("btn btn-ouyline-dark").attr("id", "barbtn").text("☰");
   let side_h = $(window).height();
-  let $side_bar = $("#side_bar").css("height", side_h);
+  let $side_bar = $("#side_bar").css("height",side_h);
 
-  $side_bar.append($link1_1, $link1_2, $link1_3, $link2_1, $link2_2, $link2_3, $link3_1, $link3_2, $link3_3,
-    $link4_1, $link4_2, $link4_3, $link5_1, $link5_2, $link5_3);
 
   function hideSideBar() {
     $side_bar.css("animation", "slideLeftFromIn 0.3s ease-in-out forwards");
@@ -149,8 +273,21 @@ $(document).ready(function () {
   });
 
 
+  $(window).on('scroll', function () {
+    let $side_bar = $('#side_bar');
+    let scrollPosition = $(this).scrollTop();
 
+    if (scrollPosition < 100 && windowWidth >= 720) {
 
+      $side_bar.css('top', '181px');
+    } else {
+
+      $side_bar.css('top', '95px');
+    }
+  });
 
   $ul.append($li1, $li2, $li3);
+  $side_bar.append($side_container1,$side_containerEx, $side_container2,$side_container3,$side_container4);
+
+  
 });
