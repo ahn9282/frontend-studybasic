@@ -56,13 +56,21 @@ $(document).ready(function () {
 
   let $searchImg=$("<img>").attr("src", "sear.png").attr("id", "searchImg").appendTo($searchBtn);//검색창 돋보기 이미지 경로
   $searchBtn.appendTo($searchForm);
+ 
 
   let $cartLink = $("#cart_link").attr("href", " http://www.naver.com");//카트 이미지 버튼 링크
   let $userLink = $("#user_link").attr("href", " http://www.google.com");//로그인 이미지 버튼 링크
   let $cartImgPath = $("#cart_img").attr("src", "cartShop.png");//카트 이미지 경로
   let $loginImgPath = $("#login_img").attr("src", "login.png");//로그인 이미지 경로
 
-  let $search_icon = $("#search_icon").attr("href","http://www.google.com").append($("<img>").attr("src", "sear.png").attr("id", "searchImg"));
+
+  
+  let $search_icon = $("#search_icon").append($("<img>").attr("src", "sear.png").attr("id", "searchImg"))
+  .on('click', function(){
+ 
+  });
+
+  
   
   
 
@@ -277,7 +285,7 @@ $(document).ready(function () {
     let $side_bar = $('#side_bar');
     let scrollPosition = $(this).scrollTop();
 
-    if (scrollPosition < 100 && windowWidth >= 720) {
+    if (scrollPosition < 100 && windowWidth >=780) {
 
       $side_bar.css('top', '181px');
     } else {
