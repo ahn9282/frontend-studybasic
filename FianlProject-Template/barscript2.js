@@ -67,7 +67,10 @@ $(document).ready(function () {
   
   let $search_icon = $("#search_icon").append($("<img>").attr("src", "sear.png").attr("id", "searchImg"))
   .on('click', function(){
- 
+
+    e.stopPropagation();
+
+    window.location.href = "https://www.google.com";
   });
 
   
@@ -284,8 +287,8 @@ $(document).ready(function () {
   $(window).on('scroll', function () {
     let $side_bar = $('#side_bar');
     let scrollPosition = $(this).scrollTop();
-
-    if (scrollPosition < 100 && windowWidth >=780) {
+    let $windowWidth = window.innerWidth;
+    if (scrollPosition < 100 && $windowWidth >=780) {
 
       $side_bar.css('top', '181px');
     } else {
@@ -297,5 +300,8 @@ $(document).ready(function () {
   $ul.append($li1, $li2, $li3);
   $side_bar.append($side_container1,$side_containerEx, $side_container2,$side_container3,$side_container4);
 
-  
+  let browserHeight = window.innerHeight;
+console.log("현재 브라우저의 높이는 " + browserHeight + "픽셀입니다.");
+let currentPosition = window.scrollY;
+console.log("현재 위치의 높이:", currentPosition, "픽셀");
 });
