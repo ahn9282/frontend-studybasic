@@ -78,7 +78,7 @@ footer a {
   align-items: center;
   margin-left: 1em;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 720px) {
   footer {
     display: flex;
   flex-direction: column;

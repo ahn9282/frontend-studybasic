@@ -223,6 +223,12 @@ nav {
     width: 100%;
 
   }
+  #icon_container{
+    display: none;
+  }
+  #icn_txt{
+    display: none;
+  }
 }
 
 

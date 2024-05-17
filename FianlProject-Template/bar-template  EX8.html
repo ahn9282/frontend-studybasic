@@ -38,6 +38,23 @@
       height: 3em;
     }
   </style>
+  <style>
+#icon_div > img{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#icon_container{
+  padding:1.5em;
+}
+#icn_txt{
+  text-align: center;
+}
+
+  </style>
 </head>
 
 <body>
@@ -67,9 +84,15 @@
 </div>
   <main>
 
-    <div id="main_container" style="height:800px;">
+    <div id="main_container" >
       
-   
+      <div id="icon_container" class="d-flex flex-row justify-content-evenly align-items-center">
+          <div id="icon_div"><img src="가구--256.png"><div id="icn_txt">가구</div></div>
+          <div id="icon_div"><img src="패브릭--256.png">  <div id="icn_txt">패브릭</div></div>
+          <div id="icon_div"><img src="생활용품-256.png"> <div id="icn_txt">생활용품</div></div>
+          <div id="icon_div"><img src="인테리어--256.png"><div id="icn_txt">인테리어</div></div>
+          <div id="icon_div"><img src="주방용품--256.png"><div id="icn_txt">주방용품</div></div>
+
     </div>
 
   </main>
