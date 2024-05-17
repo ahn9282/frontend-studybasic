@@ -8,9 +8,9 @@ $(document).ready(function () {
   let $ul = $("<ul>").attr("id", "list_category").appendTo($home_user_bar);
   let $li1 = $("<li>").css("order", "1").text("가구").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
   let $li2 = $("<li>").css("order", "2").text("패브릭").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
-  let $li3 = $("<li>").css("order", "3").text("생활소품").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
-  let $li4 = $("<li>").css("order", "4").text("인테리어").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
-  let $li5 = $("<li>").css("order", "5").text("주방용품").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
+  let $li3 = $("<li>").css("order", "3").text("인테리어").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
+  let $li4 = $("<li>").css("order", "4").text("주방용품").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
+  let $li5 = $("<li>").css("order", "5").text("생활용품").addClass("px-3 py-2").attr("id", "nav-links").appendTo($ul);
 
 //카테고리 별 링크 변수
   let link1_1 = "https://www.naver.com";
@@ -30,25 +30,27 @@ $(document).ready(function () {
   let link5_3 = "https://velog.io/";
 
   
-  let $link1_1 = $("<a>").attr("href", link1_1).addClass("btn").text("1-1").css("text-decoration", "none");
-  let $link1_2 = $("<a>").attr("href", link1_2).addClass("btn").text("1-2").css("text-decoration", "none");
-  let $link1_3 = $("<a>").attr("href", link1_3).addClass("btn").text("1-3").css("text-decoration", "none");
+  let $link1_1 = $("<a>").attr("href", link1_1).addClass("btn").text("침대").css("text-decoration", "none");
+  let $link1_2 = $("<a>").attr("href", link1_2).addClass("btn").text("수납").css("text-decoration", "none");
+  let $link1_3 = $("<a>").attr("href", link1_3).addClass("btn").text("책상·의자").css("text-decoration", "none");
 
-  let $link2_1 = $("<a>").attr("href", link2_1).addClass("btn").text("2-1").css("text-decoration", "none");
-  let $link2_2 = $("<a>").attr("href", link2_2).addClass("btn").text("2-2").css("text-decoration", "none");
-  let $link2_3 = $("<a>").attr("href", link2_3).addClass("btn").text("2-3").css("text-decoration", "none");
+  let $link2_1 = $("<a>").attr("href", link2_1).addClass("btn").text("침구").css("text-decoration", "none");
+  let $link2_2 = $("<a>").attr("href", link2_2).addClass("btn").text("커튼").css("text-decoration", "none");
+  let $link2_3 = $("<a>").attr("href", link2_3).addClass("btn").text("홈").css("text-decoration", "none");
 
-  let $link3_1 = $("<a>").attr("href", link3_1).addClass("btn").text("3-1").css("text-decoration", "none");
-  let $link3_2 = $("<a>").attr("href", link3_2).addClass("btn").text("3-2").css("text-decoration", "none");
-  let $link3_3 = $("<a>").attr("href", link3_3).addClass("btn").text("3-3").css("text-decoration", "none");
+  let $link3_1 = $("<a>").attr("href", link3_1).addClass("btn").text("데코·식물").css("text-decoration", "none");
+  let $link3_2 = $("<a>").attr("href", link3_2).addClass("btn").text("장식품").css("text-decoration", "none");
+  let $link3_3 = $("<a>").attr("href", link3_3).addClass("btn").text("조명").css("text-decoration", "none");
 
-  let $link4_1 = $("<a>").attr("href", link4_1).addClass("btn").text("4-1").css("text-decoration", "none");
-  let $link4_2 = $("<a>").attr("href", link4_2).addClass("btn").text("4-2").css("text-decoration", "none");
-  let $link4_3 = $("<a>").attr("href", link4_3).addClass("btn").text("4-3").css("text-decoration", "none");
+  let $link4_1 = $("<a>").attr("href", link4_1).addClass("btn").text("식기류").css("text-decoration", "none");
+  let $link4_2 = $("<a>").attr("href", link4_2).addClass("btn").text("조리도구").css("text-decoration", "none");
+  let $link4_3 = $("<a>").attr("href", link4_3).addClass("btn").text("주방잡화").css("text-decoration", "none");
+  let $link4_4 = $("<a>").attr("href", link4_3).addClass("btn").text("냄비·팬·솥").css("text-decoration", "none");
 
-  let $link5_1 = $("<a>").attr("href", link5_1).addClass("btn").text("5-1").css("text-decoration", "none");
-  let $link5_2 = $("<a>").attr("href", link5_2).addClass("btn").text("5-2").css("text-decoration", "none");
-  let $link5_3 = $("<a>").attr("href", link5_3).addClass("btn").text("5-3").css("text-decoration", "none");
+  let $link5_1 = $("<a>").attr("href", link5_1).addClass("btn").text("욕실").css("text-decoration", "none");
+  let $link5_2 = $("<a>").attr("href", link5_2).addClass("btn").text("청소").css("text-decoration", "none");
+  let $link5_3 = $("<a>").attr("href", link5_3).addClass("btn").text("세탁").css("text-decoration", "none");
+  let $link5_4 = $("<a>").attr("href", link5_3).addClass("btn").text("생활잡화").css("text-decoration", "none");
 
   let $searchForm = $("#searchForm");
   let $searchIn = $("<input>").attr("placeholder", "search").attr("id", "searchIn").appendTo($searchForm);
@@ -127,7 +129,7 @@ $(document).ready(function () {
   
   });
 
-  let $category3 = $("<button>").addClass("category").text("생활소품").on('click',function(e){
+  let $category3 = $("<button>").addClass("category").text("인테리어").on('click',function(e){
     e.stopPropagation();
     if ($(this).children().length === 0) {
       remove_ct_detail();  
@@ -138,21 +140,21 @@ $(document).ready(function () {
  
   });
 
-  let $category4 = $("<button>").addClass("category").text("인테리어").on('click',function(e){
+  let $category4 = $("<button>").addClass("category").text("주방용품").on('click',function(e){
     e.stopPropagation();
     if ($(this).children().length === 0) {
       remove_ct_detail();  
-      $category4.append($link4_1,$link4_2,$link4_3);
+      $category4.append($link4_1,$link4_2,$link4_3, $link4_4);
     } else {
       remove_ct_detail();  }   
 
   });
 
-  let $category5 = $("<button>").addClass("category").text("주방용품").on('click',function(e){
+  let $category5 = $("<button>").addClass("category").text("생활용품").on('click',function(e){
     e.stopPropagation();
     if ($(this).children().length === 0) {
       remove_ct_detail();  
-      $category5.append($link5_1,$link5_2,$link5_3);
+      $category5.append($link5_1,$link5_2,$link5_3,$link5_4);
   } else {
     remove_ct_detail();  }    
   });
@@ -218,6 +220,8 @@ $(document).ready(function () {
     $link4_2.appendTo($subLi2);
     let $subLi3 = $("<li>").addClass("sub-px-3").appendTo($subUl);
     $link4_3.appendTo($subLi3);
+    let $subLi4 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+    $link4_4.appendTo($subLi4);
 
   });
   $li5.mouseenter(function () {
@@ -230,6 +234,8 @@ $(document).ready(function () {
     $link5_2.appendTo($subLi2);
     let $subLi3 = $("<li>").addClass("sub-px-3").appendTo($subUl);
     $link5_3.appendTo($subLi3);
+    let $subLi4 = $("<li>").addClass("sub-px-3").appendTo($subUl);
+    $link5_4.appendTo($subLi4);
 
   });
 
